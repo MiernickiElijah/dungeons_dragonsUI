@@ -1,16 +1,19 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <SplashPage msg="Fun Project in VUE and TypeScript"/>
+  <NavBarVue />
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <SplashPage />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import NavBarVue from './components/NavBar.vue';
 import SplashPage from './components/SplashPage.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    SplashPage
+    SplashPage,
+    NavBarVue
   }
 });
 </script>

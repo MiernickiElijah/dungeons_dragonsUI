@@ -1,6 +1,10 @@
 <template>
-  <div class="hello">
-    <h1>VUE and TypeScript App</h1>
+  <div class="nav-bar">
+    <ul>
+    <li class="tab" href="#">HOME</li>
+    <li class="tab" href="#">CONTACT</li>
+    <li class="tab" href="#">THIS</li>
+  </ul>
   </div>
 </template>
 
@@ -8,22 +12,20 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'SplashPage',
+  name: 'NavBarVue',
   props: {
     msg: String,
-  }
+  },
 });
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1 {
-  margin: 40px 0 0;
-  color: #42b983;
-}
 ul {
   list-style-type: none;
   padding: 0;
+  margin: 40px 0 0;
+  color: #42b983;
 }
 li {
   display: inline-block;
