@@ -2,19 +2,22 @@
   <NavBarVue />
   <img alt="Vue logo" src="./assets/logo.png" />
   <SplashPage />
+  <CharacterVue class="container"/>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import NavBarVue from './components/NavBar.vue';
 import SplashPage from './components/SplashPage.vue';
+import CharacterVue from './components/Character.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
     SplashPage,
-    NavBarVue
-  }
+    NavBarVue,
+    CharacterVue
+}
 });
 </script>
 
@@ -31,4 +34,5 @@ export default defineComponent({
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Charis+SIL&display=swap');
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css");
 </style>

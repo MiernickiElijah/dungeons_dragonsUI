@@ -1,9 +1,8 @@
 <template>
   <div class="nav-bar">
     <ul>
-    <li class="tab" href="#">HOME</li>
-    <li class="tab" href="#">CONTACT</li>
-    <li class="tab" href="#">THIS</li>
+    <li class="tab" href="#">PLAYERS</li>
+    <li class="tab" href="#">CHARACTERS</li>
   </ul>
   </div>
 </template>
