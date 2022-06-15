@@ -18,13 +18,13 @@ export default {
         characters: null
     }
   },
-//    created() {
-//    PlayerService.get().then(response => {
-//  this.players.character = response.data
-//       }).catch(error => {
-//         console.log(error)
-//       })
-//     }
+  //   created() {
+  //   PlayerService.get().then(response => {
+  // this.players.character = response.data
+  //      }).catch(error => {
+  //        console.log(error)
+  //      })
+  //    }
  };
 
 </script>
