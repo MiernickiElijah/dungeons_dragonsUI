@@ -5,7 +5,7 @@
   <!-- the source would be changed to image connected in database to the character PK-->
   <img class="card-img-top" src="../assets/George_Clooney.gif" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">{{character.firstName}} "{{character.nickName}}" {{character.lastName}}</h5>
+    <h5 class="card-title">{{character.firstName}} "{{character.Name}}" {{character.lastName}}</h5>
     <p class="card-text">{{character.description}}</p>
   </div>
   <ul class="list-group list-group-flush">

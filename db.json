@@ -1,0 +1,25 @@
+{
+    "players": [
+      {
+        "id": 123,
+        "firstName": "Eli",
+        "lastName": "Miernicki",
+        "description": "Dungeon Master of Vultu",
+        "characterCount": 2
+      },
+      {
+        "id": 456,
+        "firstName": "Rob",
+        "lastName": "Choplin",
+        "description": "New Dungeon Master",
+        "characterCount": 3
+      },
+      {
+        "id": 789,
+        "firstName": "Alan",
+        "lastName": "Maxwell",
+        "description": "Wizard min maxer",
+        "characterCount": 4
+      }
+    ]
+  }
