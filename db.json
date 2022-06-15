@@ -42,14 +42,46 @@
         "firstName": "Rob",
         "lastName": "Choplin",
         "description": "New Dungeon Master",
-        "characterCount": 3
+        "characterCount": 1,
+        "characters": [
+          {
+            "id": 3,
+            "name": "StoneSheild",
+            "firstName": "Balor",
+            "lastName": "Hammer",
+            "description": "Hammer, full platemail",
+            "level": 14,
+            "speed": 25,
+            "age": 150,
+            "isHidden": false,
+            "characterClass": "Fighter",
+            "characterClass2": "Champion",
+            "characterRace": "Dwarf"
+          }
+        ]
       },
       {
         "id": 789,
         "firstName": "Alan",
         "lastName": "Maxwell",
         "description": "Wizard min maxer",
-        "characterCount": 4
+        "characterCount": 1,
+        "characters": [
+          {
+            "id": 4,
+            "name": "Shorty",
+            "firstName": "Bren",
+            "lastName": "Prince",
+            "description": "Mage robes, book, dagger",
+            "level": 15,
+            "speed": 25,
+            "age": 80,
+            "isHidden": true,
+            "characterClass": "Wizard",
+            "characterClass2": "Abjurer",
+            "characterRace": "Gnome"
+          }
+        ]
       }
     ]
   }

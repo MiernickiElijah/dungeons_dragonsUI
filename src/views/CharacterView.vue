@@ -7,7 +7,7 @@
 
 <script>
 import CharacterCard from '../components/CharacterCard.vue'
-// import CharacterService from '../services/CharacterService'
+// import PlayerService from '../services/PlayerService'
 
 export default {
   components: {
@@ -18,14 +18,14 @@ export default {
         characters: null
     }
   },
-  // created() {
-  //   CharacterService.get().then(response => {
-  //     this.characters = response.data
-  //   }).catch(error => {
-  //     console.log(error)
-  //   })
-  // }
-};
+//    created() {
+//    PlayerService.get().then(response => {
+//  this.players.character = response.data
+//       }).catch(error => {
+//         console.log(error)
+//       })
+//     }
+ };
 
 </script>
 
