@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import PlayerView from '../views/PlayerView.vue'
+import CharacterView from '../views/CharacterView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -10,10 +11,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/characters',
     name: 'characters',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/CharactersView.vue')
+    component: CharacterView
   }
 ]
 
