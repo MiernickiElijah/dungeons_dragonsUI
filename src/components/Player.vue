@@ -1,21 +1,22 @@
 <template>
 <div class="container">
-  <!-- v-for="character in characters"-->
+  <!-- v-for="Player in Players"-->
 <div class="card">
-  <!-- the source would be changed to image connected in database to the character PK-->
-  <img class="card-img-top" src="../assets/George_Clooney.gif" alt="Card image cap">
+  <!-- the source would be changed to image connected in database to the Player PK-->
+  <img class="card-img-top" src="../assets/General_Kenobi.gif" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">CHARACTER NAME</h5>
+    <h5 class="card-title">Player NAME</h5>
     <p class="card-text">DESCRIPTION.</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">LEVEL CLASS RACE</li>
-    <li class="list-group-item">AGE SPEED HIDDEN?</li>
-    <li class="list-group-item">PLAYER NAME</li>
+    <li class="list-group-item"># of Characters</li>
+
+<!-- v-for list of character names as clickable links-->
+
   </ul>
   <div class="card-body">
-    <li id="edit"><a href="#" class="card-link">EDIT CHARACTER</a></li>
-    <li id="delete"><a href="#" class="card-link">DELETE CHARACTER</a></li>
+    <li id="edit"><a href="#" class="card-link">EDIT Player</a></li>
+    <li id="delete"><a href="#" class="card-link">DELETE Player</a></li>
   </div>
 </div>
 </div>
@@ -25,7 +26,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'DbCharacter',
+  name: 'DbPlayer',
   props: {
     msg: String,
   }

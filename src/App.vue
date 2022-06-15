@@ -1,38 +1,30 @@
 <template>
-  <NavBarVue />
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <SplashPage />
-  <CharacterVue class="container"/>
+  <nav>
+    <router-link to="/">PLAYERS</router-link> |
+    <router-link to="/Characters">CHARACTERS</router-link>
+  </nav>
+  <router-view/>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue';
-import NavBarVue from './components/NavBar.vue';
-import SplashPage from './components/SplashPage.vue';
-import CharacterVue from './components/Character.vue';
-
-export default defineComponent({
-  name: 'App',
-  components: {
-    SplashPage,
-    NavBarVue,
-    CharacterVue
-}
-});
-</script>
 
 <style>
 #app {
-  font-family: 'Charis SIL', serif;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
-</style>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Charis+SIL&display=swap');
-@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css");
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
+}
 </style>
