@@ -28,7 +28,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'PlayerCard',
   props: {
-    player: Object,
+    player: Object
   },
 });
 </script>

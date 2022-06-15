@@ -1,7 +1,6 @@
 import axios from 'axios'
 
 const apiClient = axios.create ({
-    //HOW DO I CONNECT WITH SQL SERVER?
     baseURL: 'https://my-json-server.typicode.com/miernickielijah/flibbish',
     withCredentials: false,
     headers: {

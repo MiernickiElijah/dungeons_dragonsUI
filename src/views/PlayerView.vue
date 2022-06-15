@@ -9,7 +9,7 @@
 <script>
 import { defineComponent } from 'vue'
 import PlayerCard from '@/components/PlayerCard.vue'
-import PlayerService from '@/services/PlayerService'
+import PlayerService from '../services/PlayerService'
 
 export default defineComponent({
     name: "PlayerView",
@@ -22,7 +22,7 @@ export default defineComponent({
       }
   },
   created() {
-    PlayerService.get().then(response => {
+    PlayerService.getPlayers().then(response => {
       this.players = response.data
     }).catch(error => {
       console.log(error)
