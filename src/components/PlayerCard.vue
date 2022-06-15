@@ -5,11 +5,11 @@
   <!-- the source would be changed to image connected in database to the Player PK-->
   <img class="card-img-top" src="../assets/General_Kenobi.gif" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">Player NAME</h5>
-    <p class="card-text">DESCRIPTION.</p>
+    <h5 class="card-title">{{player.firstName}} {{player.lastName}}</h5>
+    <p class="card-text">{{player.description}}.</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"># of Characters</li>
+    <li class="list-group-item">Active Characters: {{player.characterCount}}</li>
 
 <!-- v-for list of character names as clickable links-->
 
@@ -26,10 +26,10 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'DbPlayer',
+  name: 'PlayerCard',
   props: {
-    msg: String,
-  }
+    player: Object,
+  },
 });
 </script>
 
