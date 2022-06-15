@@ -7,6 +7,7 @@
 
 <script>
 import CharacterCard from '../components/CharacterCard.vue'
+import CharacterService from '@/services/CharacterService'
 
 export default {
   components: {
@@ -14,52 +15,18 @@ export default {
   },
   data() {
     return {
-        characters: [
-      {
-      id: 1,
-      nickName: 'DawnCaller',
-      firstName: 'Draago',
-      lastName: 'Vitiri',
-      description: 'Tricorn hat, leather duster, cane sword',
-      level: 3,
-      speed: 30,
-      age: 30,
-      isHidden: true,
-      characterClass: 'Rogue',
-      characterClass2: 'Swashbuckler',
-      characterRace: 'Goliath'
-      },
-      {
-      id: 2,
-      nickName: 'Mad Fox',
-      firstName: 'Thaddeus',
-      lastName: 'Snow',
-      description: 'Long Silver Hair, leather armor, dual scimitars',
-      level: 12,
-      speed: 35,
-      age: 301,
-      isHidden: true,
-      characterClass: 'Rogue / Fighter',
-      characterClass2: 'Thief',
-      characterRace: 'Elf'
-      },
-      {
-      id: 3,
-      nickName: 'The Fool',
-      firstName: 'Tom',
-      lastName: 'Lint',
-      description: 'Long Silver Hair, tattoos, wand',
-      level: 20,
-      speed: 40,
-      age: 3301,
-      isHidden: false,
-      characterClass: 'Wizard',
-      characterClass2: 'Master',
-      characterRace: 'Elf'
-      },
-    ]}
+        characters: null
+    }
+  },
+  created() {
+    CharacterService.get().then(response => {
+      this.characters = response.data
+    }).catch(error => {
+      console.log(error)
+    })
   }
-}
+};
+
 </script>
 
 <style scoped>

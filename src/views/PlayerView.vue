@@ -6,46 +6,27 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import PlayerCard from '@/components/PlayerCard.vue';
+<script>
+import { defineComponent } from 'vue'
+import PlayerCard from '@/components/PlayerCard.vue'
+import PlayerService from '@/services/PlayerService'
 
 export default defineComponent({
-    name: "HomeView",
-    props: {
-        msg: String,
-    },
+    name: "PlayerView",
     components: { 
       PlayerCard 
       },
   data() {
     return {
-        players: [
-      {
-        id: 1,
-        firstName: 'Eli',
-        lastName: 'Miernicki',
-        description: '18 years of playing...and still going.',
-        characterCount: 3,
-        characterClass: 'Rogue',
-      },
-      {
-        id: 2,
-        firstName: 'Rob',
-        lastName: 'Chapin',
-        description: '30 years of playing...and still going.',
-        characterCount: 4,
-        characterClass: 'Fighter',
-      },
-      {
-        id: 3,
-        firstName: 'Alan',
-        lastName: 'Maxwell',
-        description: '6 years of playing...and still going.',
-        characterCount: 5,
-        characterClass: 'Wizard',
-      },
-    ]}
+        players: null
+      }
+  },
+  created() {
+    PlayerService.get().then(response => {
+      this.players = response.data
+    }).catch(error => {
+      console.log(error)
+    })
   }
 });
 </script>
