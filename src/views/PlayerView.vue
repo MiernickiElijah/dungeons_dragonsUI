@@ -1,8 +1,10 @@
 <template>
-  <div class="hello">
+  <div>
     <h1>Ready Player Run</h1>
     <h2>This App is created with Vue, TypeScript, C#, .net6 core web API, SQL Server, and Entity Framework </h2>
-    <PlayerCard v-for="player in players" :key="player.id" :player="player" />
+      <div class="card-deck">
+        <PlayerCard v-for="player in players" :key="player.id" :player="player" />
+      </div>
   </div>
 </template>
 
@@ -27,7 +29,7 @@ export default defineComponent({
     }).catch(error => {
       console.log(error)
     })
-  }
+  },
 });
 </script>
 
@@ -41,6 +43,9 @@ h2 {
   margin: 10px 0 0;
   color: #2c3e50;
   font-size: medium;
+}
+.card-deck {
+  padding: 4rem;
 }
 ul {
   list-style-type: none;

@@ -1,10 +1,11 @@
 <template>
   <nav>
     <router-link to="/">PLAYERS</router-link> |
-    <router-link to="/Characters">CHARACTERS</router-link>
+    <router-link to="/players/123">CHARACTERS</router-link>
   </nav>
   <router-view/>
 </template>
+
 
 <style>
 #app {

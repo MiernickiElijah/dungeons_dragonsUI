@@ -5,7 +5,6 @@
         "firstName": "Eli",
         "lastName": "Miernicki",
         "description": "Dungeon Master of Vultu",
-        "characterCount": 2,
         "characters": [
             {
               "id": 1,
@@ -20,20 +19,6 @@
               "characterClass": "Rogue",
               "characterClass2": "Swashbuckler",
               "characterRace": "Goliath"
-            },
-            {
-              "id": 2,
-              "name": "Mad Fox",
-              "firstName": "Thaddeus",
-              "lastName": "Snow",
-              "description": "Long Silver Hair, leather armor, dual scimitars",
-              "level": 12,
-              "speed": 35,
-              "age": 301,
-              "isHidden": true,
-              "characterClass": "Rogue / Fighter",
-              "characterClass2": "Thief",
-              "characterRace": "Elf"
             }
           ]
       },
@@ -42,10 +27,9 @@
         "firstName": "Rob",
         "lastName": "Choplin",
         "description": "New Dungeon Master",
-        "characterCount": 1,
         "characters": [
           {
-            "id": 3,
+            "id": 2,
             "name": "StoneSheild",
             "firstName": "Balor",
             "lastName": "Hammer",
@@ -65,10 +49,9 @@
         "firstName": "Alan",
         "lastName": "Maxwell",
         "description": "Wizard min maxer",
-        "characterCount": 1,
         "characters": [
           {
-            "id": 4,
+            "id": 3,
             "name": "Shorty",
             "firstName": "Bren",
             "lastName": "Prince",

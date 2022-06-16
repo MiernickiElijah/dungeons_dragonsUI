@@ -1,25 +1,19 @@
 <template>
-<div class="container">
-  <!-- v-for="Player in Players"-->
-<div class="card">
+<router-link to="/players/123" class="card text-white bg-dark mb-3">
+<div>
   <!-- the source would be changed to image connected in database to the Player PK-->
   <img class="card-img-top" src="../assets/General_Kenobi.gif" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{player.firstName}} {{player.lastName}}</h5>
     <p class="card-text">{{player.description}}.</p>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Active Characters: {{player.characterCount}}</li>
 
-<!-- v-for list of character names as clickable links-->
-
-  </ul>
   <div class="card-body">
     <li id="edit"><a href="#" class="card-link">EDIT Player</a></li>
     <li id="delete"><a href="#" class="card-link">DELETE Player</a></li>
   </div>
 </div>
-</div>
+</router-link>
 </template>
 
 <script lang="ts">
@@ -42,6 +36,10 @@ h5 {
 }
 .container {
    margin: 2rem auto;
+}
+
+.card {
+  width: 18rem;
 }
 
 ul {
