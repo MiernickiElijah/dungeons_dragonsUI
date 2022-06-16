@@ -3,7 +3,7 @@
   <!-- the source would be changed to image connected in database to the character PK-->
   <img class="card-img-top" src="../assets/George_Clooney.gif" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">{{characters}} </h5>
+    <h5 class="card-title">{{player.characters[0].name}} Here? </h5>
     <p class="card-text"></p>
   </div>
   <!-- <ul class="list-group list-group-flush">

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Ready Player Run</h1>
-    <h2>This App is created with Vue, TypeScript, C#, .net6 core web API, SQL Server, and Entity Framework </h2>
+    <h2>This App is created with Vue, TypeScript, C#, .net6 core web API, Axios, SQL Server, and Entity Framework </h2>
       <div class="card-deck">
         <PlayerCard v-for="player in players" :key="player.id" :player="player" />
       </div>

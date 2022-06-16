@@ -1,5 +1,5 @@
 <template>
-<router-link to="/players/123" class="card text-white bg-dark mb-3">
+<router-link to="/characters" class="card text-white bg-dark mb-3">
 <div>
   <!-- the source would be changed to image connected in database to the Player PK-->
   <img class="card-img-top" src="../assets/General_Kenobi.gif" alt="Card image cap">

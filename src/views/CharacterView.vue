@@ -1,13 +1,13 @@
 <template>
       <div class="card-deck">
-        <CharacterCard/>
+        <CharacterCard v-for="character in characters" :key="character.id" :character="character" />
       </div>
 </template>
 
 <script>
 import { defineComponent } from "vue"
 import CharacterCard from '@/components/CharacterCard.vue'
-import PlayerService from "../services/PlayerService"
+import CharacterService from "../services/CharacterService"
 
 export default defineComponent({
 name: "CharacterView",
@@ -16,12 +16,11 @@ name: "CharacterView",
       },
   data() {
     return {
-      characters: null,
-      id: 123
+      characters: null
     }
   },
   created() {
-    PlayerService.getPlayer(this.id).then(response => {
+    CharacterService.getCharacters().then(response => {
       this.characters = response.data
     }).catch(error => {
       console.log(error)
