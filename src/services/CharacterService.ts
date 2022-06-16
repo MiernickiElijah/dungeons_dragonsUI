@@ -16,5 +16,8 @@ export default {
     //get 1 Character from json object by id
     getCharacter(id: number) {
         return apiClient.get('/Character/' + id)
-    }
+    },
+    deleteCharacter(id: number) {
+        return apiClient.delete('/Character/' + id)
+}
 }

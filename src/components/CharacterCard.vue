@@ -1,20 +1,22 @@
 <template>
-<div class="card">
+<router-link to="/" class="card text-white bg-dark mb-3">
+  <div class="card">
   <!-- the source would be changed to image connected in database to the character PK-->
   <img class="card-img-top" src="../assets/George_Clooney.gif" alt="Card image cap">
-  <div class="card-body">
+  <div class="card-body bg-dark">
     <h5 class="card-title">{{character.firstName}} "{{character.name}}" {{character.lastName}}</h5>
     <p class="card-text">{{character.description}}</p>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Level: {{character.level}} | Race: {{character.characterRace}} | Class: {{character.characterClass}} / {{character.characterClass2}}</li>
-    <li class="list-group-item">Age: {{character.age}} years old. |  Speed: {{character.speed}} | is HIDDEN?: {{character.isHidden}}</li>
+  <ul class="list-group list-group-flush text-white bg-dark">
+    <li class="list-group-item text-white bg-dark">Level: {{character.level}} | Race: {{character.characterRace}} | Class: {{character.characterClass}} / {{character.characterClass2}}</li>
+    <li class="list-group-item text-white bg-dark">Age: {{character.age}} years old. |  Speed: {{character.speed}} | is HIDDEN?: {{character.isHidden}}</li>
   </ul>
-  <div class="card-body">
+  <div class="card-body bg-dark">
     <li id="edit"><a href="#" class="card-link">EDIT CHARACTER</a></li>
     <li id="delete"><a href="#" class="card-link">DELETE CHARACTER</a></li>
   </div>
 </div>
+</router-link>
 </template>
 
 <script lang="ts">
@@ -32,12 +34,8 @@ export default defineComponent({
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h5 {
-  margin: 40px 0 0;
   color: #42b983;
   font-size: x-large;
-}
-.container {
-   margin: 2rem auto;
 }
 
 ul {
