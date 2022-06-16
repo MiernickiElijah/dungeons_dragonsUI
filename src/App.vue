@@ -1,7 +1,7 @@
 <template>
   <nav>
     <router-link to="/">PLAYERS</router-link> |
-    <router-link to="/characters">CHARACTERS</router-link>
+    <router-link to="/Character">CHARACTERS</router-link>
   </nav>
   <router-view/>
 </template>

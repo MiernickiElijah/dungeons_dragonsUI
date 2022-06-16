@@ -12,5 +12,9 @@ const apiClient = axios.create ({
 export default {
     getCharacters() {
         return apiClient.get('/Character')
+    },
+    //get 1 Character from json object by id
+    getCharacter(id: number) {
+        return apiClient.get('/Character/' + id)
     }
 }

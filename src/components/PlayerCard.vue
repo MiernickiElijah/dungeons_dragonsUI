@@ -1,16 +1,11 @@
 <template>
-<router-link to="/characters" class="card text-white bg-dark mb-3">
+<router-link to="/Character" class="card text-white bg-dark mb-3">
 <div>
   <!-- the source would be changed to image connected in database to the Player PK-->
   <img class="card-img-top" src="../assets/General_Kenobi.gif" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{player.firstName}} {{player.lastName}}</h5>
-    <p class="card-text">{{player.description}}.</p>
-  </div>
-
-  <div class="card-body">
-    <li id="edit"><a href="#" class="card-link">EDIT Player</a></li>
-    <li id="delete"><a href="#" class="card-link">DELETE Player</a></li>
+    <p class="card-text">{{player.description}}</p>
   </div>
 </div>
 </router-link>

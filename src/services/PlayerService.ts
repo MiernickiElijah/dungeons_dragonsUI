@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiClient = axios.create ({
-    baseURL: 'https://my-json-server.typicode.com/miernickielijah/flibbish',
+    baseURL: 'https://localhost:7225/api/',
     withCredentials: false,
     headers: {
         Accept: 'application/json',
@@ -11,10 +11,10 @@ const apiClient = axios.create ({
 //get all players from json object in db
 export default {
     getPlayers() {
-        return apiClient.get('/players')
+        return apiClient.get('/Player')
     },
 //get 1 player from json object by id
     getPlayer(id: number) {
-        return apiClient.get('/players/' + id)
+        return apiClient.get('/Player/' + id)
     }
 }

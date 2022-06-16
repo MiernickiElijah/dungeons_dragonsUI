@@ -3,13 +3,13 @@
   <!-- the source would be changed to image connected in database to the character PK-->
   <img class="card-img-top" src="../assets/George_Clooney.gif" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">{{player.characters[0].name}} Here? </h5>
-    <p class="card-text"></p>
+    <h5 class="card-title">{{character.firstName}} "{{character.name}}" {{character.lastName}}</h5>
+    <p class="card-text">{{character.description}}</p>
   </div>
-  <!-- <ul class="list-group list-group-flush">
+  <ul class="list-group list-group-flush">
     <li class="list-group-item">Level: {{character.level}} | Race: {{character.characterRace}} | Class: {{character.characterClass}} / {{character.characterClass2}}</li>
     <li class="list-group-item">Age: {{character.age}} years old. |  Speed: {{character.speed}} | is HIDDEN?: {{character.isHidden}}</li>
-  </ul> -->
+  </ul>
   <div class="card-body">
     <li id="edit"><a href="#" class="card-link">EDIT CHARACTER</a></li>
     <li id="delete"><a href="#" class="card-link">DELETE CHARACTER</a></li>
@@ -23,7 +23,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'CharacterCard',
   props: {
-    player: Object
+    character: Object
   },
 });
 </script>
