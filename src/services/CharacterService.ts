@@ -1,3 +1,4 @@
+import { Character } from '@/models/Character';
 import axios from 'axios'
 
 const apiClient = axios.create ({
@@ -17,7 +18,16 @@ export default {
     getCharacter(id: number) {
         return apiClient.get('/Character/' + id)
     },
-    deleteCharacter(id: number) {
-        return apiClient.delete('/Character/' + id)
-}
-}
+    //post new character    
+    postCharacter(character: Character) {
+        return apiClient.post('/Character', character);
+    },
+    //edit character
+    editCharacter(id: number){
+        return apiClient.put('/Character/' + id);
+    },
+    //delete character
+    deleteCharacter(id:number){
+        return apiClient.delete('/Character/' + id);
+    }
+};

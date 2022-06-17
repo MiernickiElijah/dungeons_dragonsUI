@@ -1,9 +1,8 @@
 <template>
-    <label>{{label}}</label>
     <input
         v-bind="$attrs"
         :placeholder="label"
-        class="field"
+        class="form-control"
         type="input"
         :value="modelValue"
         @input="$emit('update:modelValue', $event.target.value)"

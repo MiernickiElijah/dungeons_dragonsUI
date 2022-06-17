@@ -1,4 +1,11 @@
 <template>
+<div class="btnContainer">
+        <!--on button click show model which is CharacterForm component else hide form-->
+        <button @click="isShow = !isShow" class="btn btn-outline-success">Add Character</button>
+          <div v-if="isShow">
+            <CharacterForm></CharacterForm>
+          </div>
+      </div>
       <div>
         <CharacterCard v-for="character in characters" :key="character.id" :character="character" />
       </div>
@@ -8,15 +15,18 @@
 import { defineComponent } from "vue"
 import CharacterCard from '@/components/CharacterCard.vue'
 import CharacterService from "../services/CharacterService"
+import CharacterForm from "../views/CharacterForm"
 
 export default defineComponent({
 name: "CharacterView",
     components: { 
-      CharacterCard 
+      CharacterCard,
+      CharacterForm
       },
   data() {
     return {
-      characters: null
+      characters: null,
+      isShow: false
     }
   },
   created() {
