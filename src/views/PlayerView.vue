@@ -2,7 +2,7 @@
   <div>
     <h1>Ready Player Run</h1>
     <h2>This App is created with Vue, TypeScript, C#, .net6 core web API, Axios, SQL Server, and Entity Framework </h2>
-      <div class="card-deck">
+      <div class="center">
         <PlayerCard v-for="player in players" :key="player.id" :player="player" />
       </div>
   </div>
@@ -43,9 +43,6 @@ h2 {
   margin: 10px 0 0;
   color: #2c3e50;
   font-size: medium;
-}
-.card-deck {
-  padding: 4rem;
 }
 ul {
   list-style-type: none;

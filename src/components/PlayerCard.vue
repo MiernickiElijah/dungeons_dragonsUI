@@ -1,14 +1,20 @@
 <template>
-<router-link to="/Character" class="card text-white bg-dark mb-3">
-<div>
-  <!-- the source would be changed to image connected in database to the Player PK-->
-  <img class="card-img-top" src="../assets/General_Kenobi.gif" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{player.firstName}} {{player.lastName}}</h5>
-    <p class="card-text">{{player.description}}</p>
+<div class="container row row-cols-1 row-cols-md-2 center">
+  <div class="col mb-4">
+    <router-link to="/Character">
+      <div class="card text-white mb-3">
+        <img src="../assets/General_Kenobi.gif" class="card-img-top" alt="kenobi">
+        <div class="card-body">
+          <h5 class="card-title">{{player.firstName}} {{player.lastName}}</h5>
+          <p class="card-text">{{player.description}}</p>
+        </div>
+          <div class="card-body">
+            <button type="button" class="btn btn-outline-info">Edit Player</button>
+          </div>
+    </div>
+    </router-link>
   </div>
 </div>
-</router-link>
 </template>
 
 <script lang="ts">
@@ -26,15 +32,19 @@ export default defineComponent({
 <style scoped>
 h5 {
   margin: 40px 0 0;
-  color: #42b983;
+  color: #FFB100;
   font-size: x-large;
 }
 .container {
    margin: 2rem auto;
 }
-
+.btn-outline-info:hover {
+background-color: #72DDF7;
+color: #0A0908;
+font-weight: 400;
+}
 .card {
-  width: 18rem;
+  background-color: #0C4767;
 }
 
 ul {
@@ -43,15 +53,6 @@ ul {
 }
 li {
   display: inline-block;
-  margin: 0 10px;
-}
-#edit {
-    color: rgb(14, 156, 97); 
-    font-weight: bold;
-}
-#delete {
-    color: red; 
-    font-weight: bold;
 }
  a, a:hover, a:focus, a:active {
       text-decoration: none;

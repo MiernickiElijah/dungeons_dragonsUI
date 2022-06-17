@@ -1,5 +1,5 @@
 <template>
-      <div class="card-deck">
+      <div class="">
         <CharacterCard v-for="character in characters" :key="character.id" :character="character" />
       </div>
 </template>
@@ -39,9 +39,6 @@ h2 {
   margin: 10px 0 0;
   color: #2c3e50;
   font-size: medium;
-}
-.card-deck {
-  padding: 4rem;
 }
 ul {
   list-style-type: none;

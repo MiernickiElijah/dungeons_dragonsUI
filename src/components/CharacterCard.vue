@@ -1,22 +1,24 @@
 <template>
-<router-link to="/" class="card text-white bg-dark mb-3">
-  <div class="card">
-  <!-- the source would be changed to image connected in database to the character PK-->
-  <img class="card-img-top" src="../assets/George_Clooney.gif" alt="Card image cap">
-  <div class="card-body bg-dark">
-    <h5 class="card-title">{{character.firstName}} "{{character.name}}" {{character.lastName}}</h5>
-    <p class="card-text">{{character.description}}</p>
-  </div>
-  <ul class="list-group list-group-flush text-white bg-dark">
-    <li class="list-group-item text-white bg-dark">Level: {{character.level}} | Race: {{character.characterRace}} | Class: {{character.characterClass}} / {{character.characterClass2}}</li>
-    <li class="list-group-item text-white bg-dark">Age: {{character.age}} years old. |  Speed: {{character.speed}} | is HIDDEN?: {{character.isHidden}}</li>
-  </ul>
-  <div class="card-body bg-dark">
-    <li id="edit"><a href="#" class="card-link">EDIT CHARACTER</a></li>
-    <li id="delete"><a href="#" class="card-link">DELETE CHARACTER</a></li>
+<div class="container row row-cols-1 row-cols-md-2 center">
+  <div class="col mb-4">
+    <router-link to="/">
+      <div class="card text-white mb-3">
+        <img src="../assets/George_Clooney.gif" class="card-img-top" alt="clooney">
+        <div class="card-body">
+          <h5 class="card-title">{{character.firstName}} "{{character.name}}" {{character.lastName}}</h5>
+          <p class="card-text">{{character.description}}</p>
+            <ul class="list-group list-group-flush text-white">
+              <li class="list-group-item text-white">Level: {{character.level}} | Race: {{character.characterRace}} | Class: {{character.characterClass}} / {{character.characterClass2}}</li>
+              <li class="list-group-item text-white">Age: {{character.age}} years old. |  Speed: {{character.speed}} | is HIDDEN?: {{character.isHidden}}</li>
+            </ul>
+        </div>
+          <div class="card-body">
+            <button type="button" class="btn btn-outline-info">Edit Character</button>
+          </div>
+    </div>
+    </router-link>
   </div>
 </div>
-</router-link>
 </template>
 
 <script lang="ts">
@@ -34,25 +36,23 @@ export default defineComponent({
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h5 {
-  color: #42b983;
+  margin: 40px 0 0;
+  color: #FFB100;
   font-size: x-large;
 }
-
-ul {
-  list-style-type: none;
-  padding: 0;
+.container {
+   margin: 2rem auto;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+.btn-outline-info:hover {
+background-color: #72DDF7;
+color: #0A0908;
+font-weight: 400;
 }
-#edit {
-    color: rgb(14, 156, 97); 
-    font-weight: bold;
+.card {
+  background-color: #0C4767;
 }
-#delete {
-    color: red; 
-    font-weight: bold;
+.list-group-item{
+  background-color: #0A0908;
 }
  a, a:hover, a:focus, a:active {
       text-decoration: none;
