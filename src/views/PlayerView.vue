@@ -2,7 +2,7 @@
   <div>
     <h1>Ready Player Run</h1>
     <h2>This App is created with Vue, TypeScript, C#, .net6 core web API, Axios, SQL Server, and Entity Framework </h2>
-      <div class="center">
+      <div class>
         <PlayerCard v-for="player in players" :key="player.id" :player="player" />
       </div>
   </div>
@@ -37,11 +37,11 @@ export default defineComponent({
 <style scoped>
 h1 {
   margin: 40px 0 0;
-  color: #42b983;
+  color: #72DDF7;
 }
 h2 {
   margin: 10px 0 0;
-  color: #2c3e50;
+  color: #FFB100;
   font-size: medium;
 }
 ul {

@@ -1,6 +1,6 @@
 <template>
 <div class="container row row-cols-1 row-cols-md-2 center">
-  <div class="col mb-4">
+  <div class="col mb-4 d-flex align-items-center justify-content-center">
     <router-link to="/">
       <div class="card text-white mb-3">
         <img src="../assets/George_Clooney.gif" class="card-img-top" alt="clooney">
@@ -50,6 +50,7 @@ font-weight: 400;
 }
 .card {
   background-color: #0C4767;
+  max-width: 400px;
 }
 .list-group-item{
   background-color: #0A0908;

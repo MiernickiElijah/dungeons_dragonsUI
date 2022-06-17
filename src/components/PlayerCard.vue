@@ -1,6 +1,6 @@
 <template>
 <div class="container row row-cols-1 row-cols-md-2 center">
-  <div class="col mb-4">
+  <div class="col mb-4 d-flex align-items-center justify-content-center">
     <router-link to="/Character">
       <div class="card text-white mb-3">
         <img src="../assets/General_Kenobi.gif" class="card-img-top" alt="kenobi">
@@ -36,7 +36,7 @@ h5 {
   font-size: x-large;
 }
 .container {
-   margin: 2rem auto;
+   margin: 3rem auto;
 }
 .btn-outline-info:hover {
 background-color: #72DDF7;
@@ -45,6 +45,7 @@ font-weight: 400;
 }
 .card {
   background-color: #0C4767;
+  max-width: 400px;
 }
 
 ul {
