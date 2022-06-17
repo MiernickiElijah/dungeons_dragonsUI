@@ -1,26 +1,36 @@
 <template>
-  <div>
-    <h1>Ready Player Run</h1>
-    <h2>This App is created with Vue, TypeScript, C#, .net6 core web API, Axios, SQL Server, and Entity Framework </h2>
-      <div class>
-        <PlayerCard v-for="player in players" :key="player.id" :player="player" />
+<div>
+  <h1>Ready Player Run</h1>
+    <h2>A helpful Dungeon Master tool to keep track of players and characters</h2>
+      <div class="btnContainer">
+        <!--on button click show model which is PlayerForm component else hide form-->
+        <button @click="isShow = !isShow" class="btn btn-outline-success">Add Player</button>
+          <div v-if="isShow">
+            <PlayerForm></PlayerForm>
+          </div>
       </div>
-  </div>
+    <div class>
+        <PlayerCard v-for="player in players" :key="player.id" :player="player" />
+    </div>
+</div>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
 import PlayerCard from '@/components/PlayerCard.vue'
 import PlayerService from '../services/PlayerService'
+import PlayerForm from './PlayerForm.vue';
 
 export default defineComponent({
     name: "PlayerView",
-    components: { 
-      PlayerCard 
-      },
+    components: {
+    PlayerCard,
+    PlayerForm
+},
   data() {
     return {
-        players: null
+        players: null,
+        isShow: false
       }
   },
   created() {
@@ -43,6 +53,12 @@ h2 {
   margin: 10px 0 0;
   color: #FFB100;
   font-size: medium;
+}
+.btnContainer {
+  margin: 30px;
+}
+.btn:hover {
+  color:#72DDF7;
 }
 ul {
   list-style-type: none;
