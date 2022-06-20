@@ -1,7 +1,4 @@
 <template>
-<div class="container">
-  <div class="col mb-4 d-flex justify-content-center">
-    <router-link to="/">
       <div class="card text-white mb-3">
         <img src="../assets/George_Clooney.gif" class="card-img-top" alt="clooney">
         <div class="card-body">
@@ -9,16 +6,13 @@
           <p class="card-text">{{character.description}}</p>
             <ul class="list-group list-group-flush text-white">
               <li class="list-group-item text-white">Level: {{character.level}} | Race: {{character.characterRace}} | Class: {{character.characterClass}} / {{character.characterClass2}}</li>
-              <li class="list-group-item text-white">Age: {{character.age}} years old. |  Speed: {{character.speed}} | is HIDDEN?: {{character.isHidden}}</li>
+              <li class="list-group-item text-white">Age: {{character.age}} years old. |  Speed: {{character.speed}}</li>
             </ul>
         </div>
-          <div class="card-body">
+          <div class="card-footer">
             <button type="button" class="btn btn-outline-info">Edit Character</button>
           </div>
     </div>
-    </router-link>
-  </div>
-</div>
 </template>
 
 <script lang="ts">
@@ -36,13 +30,11 @@ export default defineComponent({
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h5 {
-  margin: 40px 0 0;
+  margin: 2rem 0 0;
   color: #FFB100;
   font-size: x-large;
 }
-.container {
-   margin: 2rem auto;
-}
+
 .btn-outline-info:hover {
 background-color: #72DDF7;
 color: #0A0908;
@@ -51,6 +43,7 @@ font-weight: 400;
 .card {
   background-color: #0C4767;
   max-width: 400px;
+  min-width: 400px;
 }
 .list-group-item{
   background-color: #0A0908;

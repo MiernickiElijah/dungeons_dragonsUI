@@ -11,7 +11,7 @@
             type="text"
             />
             <BaseInput class="col form-group"
-            v-model="character.firstName"
+            v-model="character.name"
             label="Nickname"
             type="text"
             />
@@ -46,11 +46,11 @@
             label="age(number)"
             type="text"
             />
-            <BaseInput class="form-group"
+            <!-- <BaseInput class="form-group"
             v-model="character.isHidden"
             label="Stealth?(true or false)"
-            type="text"
-            />
+            type= "text"
+            /> -->
             <BaseInput class="form-group"
             v-model="character.characterClass"
             label="Class"
@@ -73,7 +73,7 @@
 </template>
 
 <script>
-import CharacterService from '@/services/PlayerService'
+import CharacterService from '@/services/CharacterService'
 import BaseInput from '@/components/BaseInput.vue'
 
 export default {

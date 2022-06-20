@@ -1,5 +1,5 @@
-import { Character } from '@/models/Character';
 import axios from 'axios'
+import { Character } from '@/models/Character';
 
 const apiClient = axios.create ({
     baseURL: 'https://localhost:7225/api/',

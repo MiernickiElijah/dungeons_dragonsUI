@@ -1,13 +1,13 @@
 <template>
-<div class="btnContainer container-sm mx-auto">
+<div class="btnContainer mx-auto">
         <!--on button click show model which is CharacterForm component else hide form-->
         <button @click="isShow = !isShow" class="btn btn-outline-success">Add Character</button>
           <div v-if="isShow">
-            <CharacterForm class=""></CharacterForm>
+            <CharacterForm></CharacterForm>
             <button @click="isShow = !isShow" class="btn btn-outline-danger" type="button">Cancel</button>
           </div>
       </div>
-      <div>
+      <div class='card-deck d-flex justify-content-center'>
         <CharacterCard v-for="character in characters" :key="character.id" :character="character" />
       </div>
 </template>
@@ -42,19 +42,22 @@ name: "CharacterView",
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.btnContainer{
-  margin: 30px;
-  width: 75%;
-}
-
 h1 {
-  margin: 40px 0 0;
-  color: #42b983;
+  margin: 2rem 0 0;
+  color: #72DDF7;
 }
 h2 {
-  margin: 10px 0 0;
-  color: #2c3e50;
+  margin: 2rem 0 0;
+  color: #FFB100;
   font-size: medium;
+}
+.btnContainer {
+  width: 75%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.btn:hover {
+  color:#72DDF7;
 }
 ul {
   list-style-type: none;
@@ -62,6 +65,6 @@ ul {
 }
 li {
   display: inline-block;
-  margin: 0 10px;
+  margin: 0 1rem;
 }
 </style>

@@ -2,7 +2,7 @@
 <div>
   <h1>Ready Player Run</h1>
     <h2>A helpful Dungeon Master tool to keep track of players and characters</h2>
-      <div class="btnContainer container-sm mx-auto">
+      <div class="btnContainer mx-auto">
         <!--on button click show model which is PlayerForm component else hide form-->
         <button @click="isShow = !isShow" class="btn btn-outline-success">Add Player</button>
           <div v-if="isShow">
@@ -10,7 +10,7 @@
             <button @click="isShow = !isShow" class="btn btn-outline-danger" type="button">Cancel</button>
           </div>
       </div>
-    <div class>
+    <div class="card-deck d-flex justify-content-center">
         <PlayerCard v-for="player in players" :key="player.id" :player="player" />
     </div>
 </div>
@@ -47,7 +47,7 @@ export default defineComponent({
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1 {
-  margin: 40px 0 0;
+  margin: 2rem 0 0;
   color: #72DDF7;
 }
 h2 {
@@ -56,8 +56,9 @@ h2 {
   font-size: medium;
 }
 .btnContainer {
-  margin: 30px;
   width: 75%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 .btn:hover {
   color:#72DDF7;
@@ -68,6 +69,6 @@ ul {
 }
 li {
   display: inline-block;
-  margin: 0 10px;
+  margin: 0 2rem;
 }
 </style>

@@ -7,7 +7,7 @@ export interface Character
     level: number,
     speed: number, 
     age: number,
-    isHidden: boolean,
+    // isHidden: string,
     characterClass: string, 
     characterClass2: string, 
     characterRace: string, 

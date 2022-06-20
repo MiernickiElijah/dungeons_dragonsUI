@@ -1,42 +1,44 @@
 <template>
-<div class="container">
-  <div class="col mb-4 d-flex justify-content-center">
-    <router-link to="/Character">
       <div class="card text-white mb-3">
         <img src="../assets/General_Kenobi.gif" class="card-img-top" alt="kenobi">
         <div class="card-body">
           <h5 class="card-title">{{player.firstName}} {{player.lastName}}</h5>
           <p class="card-text">{{player.description}}</p>
         </div>
-          <div class="card-body">
-            <button type="button" class="btn btn-outline-info">Edit Player</button>
+          <div class="card-footer">
+        <button @click="isShow = !isShow" class="btn btn-outline-success">Edit Player</button>
+          <div v-if="isShow">
+            <PlayerEditForm></PlayerEditForm>
+            <button @click="isShow = !isShow" class="btn btn-outline-danger" type="button">Cancel</button>
           </div>
-    </div>
-    </router-link>
-  </div>
+          </div>
 </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import PlayerEditForm from '@/views/PlayerEditForm.vue';
 
 export default defineComponent({
-  name: 'PlayerCard',
-  props: {
-    player: Object
-  },
+    name: "PlayerCard",
+    props: {
+        player: Object
+    },
+    data() {
+        return {
+            isShow: false
+        };
+    },
+    components: { PlayerEditForm }
 });
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h5 {
-  margin: 40px 0 0;
+  margin: 2rem 0 0;
   color: #FFB100;
   font-size: x-large;
-}
-.container {
-   margin: 3rem auto;
 }
 .btn-outline-info:hover {
 background-color: #72DDF7;
@@ -46,6 +48,7 @@ font-weight: 400;
 .card {
   background-color: #0C4767;
   max-width: 400px;
+  min-width: 400px;
 }
 
 ul {
