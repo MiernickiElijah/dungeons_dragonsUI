@@ -1,9 +1,10 @@
 <template>
-<div class="btnContainer">
+<div class="btnContainer container-sm mx-auto">
         <!--on button click show model which is CharacterForm component else hide form-->
         <button @click="isShow = !isShow" class="btn btn-outline-success">Add Character</button>
           <div v-if="isShow">
-            <CharacterForm></CharacterForm>
+            <CharacterForm class=""></CharacterForm>
+            <button @click="isShow = !isShow" class="btn btn-outline-danger" type="button">Cancel</button>
           </div>
       </div>
       <div>
@@ -41,6 +42,11 @@ name: "CharacterView",
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.btnContainer{
+  margin: 30px;
+  width: 75%;
+}
+
 h1 {
   margin: 40px 0 0;
   color: #42b983;

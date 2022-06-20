@@ -2,7 +2,7 @@
 <div>
   <h1>Ready Player Run</h1>
     <h2>A helpful Dungeon Master tool to keep track of players and characters</h2>
-      <div class="btnContainer">
+      <div class="btnContainer container-sm mx-auto">
         <!--on button click show model which is PlayerForm component else hide form-->
         <button @click="isShow = !isShow" class="btn btn-outline-success">Add Player</button>
           <div v-if="isShow">
@@ -57,6 +57,7 @@ h2 {
 }
 .btnContainer {
   margin: 30px;
+  width: 75%;
 }
 .btn:hover {
   color:#72DDF7;

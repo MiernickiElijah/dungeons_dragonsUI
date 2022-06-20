@@ -4,21 +4,23 @@
 <form @submit.prevent="sendForm">
     <div class="form-group bg-dark text-white">
         <h3>Character Name</h3>
-            <BaseInput
-            v-model="character.firstName"
-            label="Nickname"
-            type="text"
-            />
-            <BaseInput
+        <div class="form-row">
+            <BaseInput class="col form-group"
             v-model="character.firstName"
             label="First Name"
             type="text"
             />
-            <BaseInput
+            <BaseInput class="col form-group"
+            v-model="character.firstName"
+            label="Nickname"
+            type="text"
+            />
+            <BaseInput class="col form-group"
             v-model="character.lastName"
             label="Last Name"
             type="text"
             />
+            </div> 
     </div>
     <div class="form-group bg-dark text-white">
         <h3>Description</h3>
@@ -65,7 +67,6 @@
             type="text"
             />
         <button class="btn btn-outline-success" type="submit">Add</button>
-        <button class="btn btn-outline-danger" type="button">Cancel</button>
     </div>
 
     </form>
