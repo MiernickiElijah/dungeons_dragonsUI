@@ -7,6 +7,7 @@
         <button @click="isShow = !isShow" class="btn btn-outline-success">Add Player</button>
           <div v-if="isShow">
             <PlayerForm></PlayerForm>
+            <button @click="isShow = !isShow" class="btn btn-outline-danger" type="button">Cancel</button>
           </div>
       </div>
     <div class>

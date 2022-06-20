@@ -22,7 +22,6 @@
             type="text"
             />
         <button class="btn btn-outline-success" type="submit">Add</button>
-        <button class="btn btn-outline-danger" type="button">Cancel</button>
     </div>
 
     </form>
@@ -40,8 +39,8 @@ export default {
                 firstName: '',
                 lastName: '',
                 description: ''
-            } 
-        }        
+            },
+        }       
     },
     methods: {
     sendForm () {

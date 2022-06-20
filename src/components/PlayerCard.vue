@@ -1,6 +1,6 @@
 <template>
-<div class="container row row-cols-1 row-cols-md-2 center">
-  <div class="col mb-4 d-flex align-items-center justify-content-center">
+<div class="container">
+  <div class="col mb-4 d-flex justify-content-center">
     <router-link to="/Character">
       <div class="card text-white mb-3">
         <img src="../assets/General_Kenobi.gif" class="card-img-top" alt="kenobi">
