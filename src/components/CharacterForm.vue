@@ -47,11 +47,6 @@
             type="text"
             />
             <BaseInput class="form-group"
-            v-model="character.isHidden"
-            label="Stealth?(true or false)"
-            type="text"
-            />
-            <BaseInput class="form-group"
             v-model="character.characterClass"
             label="Class"
             type="text"
@@ -88,7 +83,6 @@ export default {
                 level: '',
                 speed: '', 
                 age: '',
-                isHidden: '',
                 characterClass: '', 
                 characterClass2: '',    
                 characterRace: '', 
