@@ -1,18 +1,18 @@
 <template>
-      <div class="card text-white mb-3">
-        <img src="../assets/General_Kenobi.gif" class="card-img-top" alt="kenobi">
-        <div class="card-body">
+  <div class="card text-white mb-3">
+    <img src="../assets/General_Kenobi.gif" class="card-img-top" alt="kenobi"/>
+      <div class="card-body">
           <h5 class="card-title">{{player.firstName}} {{player.lastName}}</h5>
           <p class="card-text">{{player.description}}</p>
-        </div>
-          <div class="card-footer">
-        <button @click="isShow = !isShow" class="btn btn-outline-success">Edit Player</button>
+      </div>
+        <div class="card-footer">
+          <button @click="isShow = !isShow" class="btn btn-outline-success">Edit Player</button>
           <div v-if="isShow">
             <PlayerEditForm></PlayerEditForm>
             <button @click="isShow = !isShow" class="btn btn-outline-danger" type="button">Cancel</button>
           </div>
-          </div>
-</div>
+        </div>
+  </div>
 </template>
 
 <script lang="ts">

@@ -46,11 +46,11 @@
             label="age(number)"
             type="text"
             />
-            <!-- <BaseInput class="form-group"
+            <BaseInput class="form-group"
             v-model="character.isHidden"
             label="Stealth?(true or false)"
-            type= "text"
-            /> -->
+            type="text"
+            />
             <BaseInput class="form-group"
             v-model="character.characterClass"
             label="Class"

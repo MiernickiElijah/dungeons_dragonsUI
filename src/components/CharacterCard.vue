@@ -6,23 +6,34 @@
           <p class="card-text">{{character.description}}</p>
             <ul class="list-group list-group-flush text-white">
               <li class="list-group-item text-white">Level: {{character.level}} | Race: {{character.characterRace}} | Class: {{character.characterClass}} / {{character.characterClass2}}</li>
-              <li class="list-group-item text-white">Age: {{character.age}} years old. |  Speed: {{character.speed}}</li>
+              <li class="list-group-item text-white">Age: {{character.age}} years old. |  Speed: {{character.speed}} </li>
             </ul>
         </div>
-          <div class="card-footer">
-            <button type="button" class="btn btn-outline-info">Edit Character</button>
+        <div class="card-footer">
+          <button @click="isShow = !isShow" class="btn btn-outline-success">Edit Character</button>
+          <div v-if="isShow">
+            <CharacterEditForm></CharacterEditForm>
+            <button @click="isShow = !isShow" class="btn btn-outline-danger" type="button">Cancel</button>
           </div>
+        </div>
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import CharacterEditForm from '@/views/CharacterEditForm.vue';
 
 export default defineComponent({
   name: 'CharacterCard',
   props: {
     character: Object
   },
+      data() {
+        return {
+            isShow: false
+        };
+    },
+    components: { CharacterEditForm }
 });
 </script>
 
