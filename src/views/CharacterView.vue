@@ -16,7 +16,7 @@
 import { defineComponent } from "vue"
 import CharacterCard from '@/components/CharacterCard.vue'
 import CharacterService from "../services/CharacterService"
-import CharacterForm from '../views/CharacterForm'
+import CharacterForm from '../components/CharacterForm'
 
 export default defineComponent({
 name: "CharacterView",

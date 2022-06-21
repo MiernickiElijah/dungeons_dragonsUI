@@ -20,13 +20,14 @@
 import { defineComponent } from 'vue'
 import PlayerCard from '@/components/PlayerCard.vue'
 import PlayerService from '../services/PlayerService'
-import PlayerForm from '@/views/PlayerForm.vue';
+import PlayerForm from '@/components/PlayerForm.vue'
+
 
 export default defineComponent({
     name: "PlayerView",
     components: {
     PlayerCard,
-    PlayerForm
+    PlayerForm,
 },
   data() {
     return {
@@ -40,7 +41,7 @@ export default defineComponent({
     }).catch(error => {
       console.log(error)
     })
-  },
+  }
 });
 </script>
 

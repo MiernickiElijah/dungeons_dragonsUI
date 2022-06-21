@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import CharacterEditForm from '@/views/CharacterEditForm.vue';
+import CharacterEditForm from '@/components/CharacterEditForm.vue';
 
 export default defineComponent({
   name: 'CharacterCard',

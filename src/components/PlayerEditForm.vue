@@ -26,8 +26,9 @@
 </template>
 
 <script>
-// import PlayerService from '@/services/PlayerService'
+import PlayerService from '@/services/PlayerService'
 import BaseInput from '@/components/BaseInput.vue'
+import { getCurrentInstance } from 'vue'
 
 export default {
     components: {BaseInput},
@@ -42,15 +43,27 @@ export default {
      },
     methods: {
     editPlayer () {
-        console.log("PUT");
+
+     var keyId = getCurrentInstance().vnode.key; 
+         console.log("PUT", keyId);
+
+         PlayerService.editPlayer().then(response => console.log(response))
+         .catch(error => {
+             console.log(error);
+
+         });
         },
+        
     deletePlayer () {
-        console.log("DELETE")
-            //  PlayerService.deletePlayer().then(response => {
-            //      this.player = response.data
-            //      }).catch(error => {
-            //      console.log(error);
-            //  });
+
+     var keyId = getCurrentInstance().vnode.key; 
+         console.log("DELETE", keyId);
+
+            PlayerService.deletePlayer().then(response => console.log(response))
+            .catch(error => {
+                console.log(error);
+
+            });
         }
     }
 }

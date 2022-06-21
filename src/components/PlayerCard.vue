@@ -8,7 +8,7 @@
         <div class="card-footer">
           <button @click="isShow = !isShow" class="btn btn-outline-success">Edit Player</button>
           <div v-if="isShow">
-            <PlayerEditForm></PlayerEditForm>
+            <PlayerEditForm :key="player.id"></PlayerEditForm>
             <button @click="isShow = !isShow" class="btn btn-outline-danger" type="button">Cancel</button>
           </div>
         </div>
@@ -17,7 +17,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import PlayerEditForm from '@/views/PlayerEditForm.vue';
+import PlayerEditForm from '@/components/PlayerEditForm.vue';
 
 export default defineComponent({
     name: "PlayerCard",
