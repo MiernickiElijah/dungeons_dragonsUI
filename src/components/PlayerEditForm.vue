@@ -36,7 +36,7 @@ export default {
      data() {
          return {
               player: {
-                id: 20, //need this to be dynamically passed down from V-for parent component
+                id: 21, //need this to be dynamically passed down from V-for parent component
                 firstName: '',
                 lastName: '',
                 description: '',
@@ -57,7 +57,6 @@ export default {
                     })
                 })
             },
-        },
     deletePlayer () {
          console.log("DELETE", this.player.id);
              PlayerService.deletePlayer(this.player.id).then(response => {
@@ -71,7 +70,7 @@ export default {
             })
         }
     }
-
+}
 </script>
 
 <style>
