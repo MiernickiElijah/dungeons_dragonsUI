@@ -19,7 +19,6 @@
 <script>
 import { defineComponent } from 'vue'
 import PlayerCard from '@/components/PlayerCard.vue'
-import PlayerService from '../services/PlayerService'
 import PlayerForm from '@/components/PlayerForm.vue'
 
 
@@ -31,16 +30,16 @@ export default defineComponent({
 },
   data() {
     return {
-        players: null,
         isShow: false
       }
   },
   created() {
-    PlayerService.getPlayers().then(response => {
-      this.players = response.data
-    }).catch(error => {
-      console.log(error)
-    })
+    this.$store.dispatch('getPlayers')
+  },
+  computed: {
+    players() {
+      return this.$store.state.players
+    }
   }
 });
 </script>

@@ -15,7 +15,6 @@
 <script>
 import { defineComponent } from "vue"
 import CharacterCard from '@/components/CharacterCard.vue'
-import CharacterService from "../services/CharacterService"
 import CharacterForm from '../components/CharacterForm'
 
 export default defineComponent({
@@ -26,18 +25,18 @@ name: "CharacterView",
       },
   data() {
     return {
-      characters: null,
       isShow: false
     }
   },
   created() {
-    CharacterService.getCharacters().then(response => {
-      this.characters = response.data
-    }).catch(error => {
-      console.log(error)
-    })
+    this.$store.dispatch('getCharacters')
+  },
+  computed: {
+    characters() {
+      return this.$store.state.characters
+    }
   }
-})
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
