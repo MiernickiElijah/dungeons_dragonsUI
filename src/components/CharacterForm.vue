@@ -2,61 +2,61 @@
 <div>
 </div>
 <form @submit.prevent="sendForm">
-    <div class="form-group bg-dark text-white">
+    <div class="form-control bg-dark text-white">
         <h3>Character Name</h3>
-        <div class="form-row">
-            <BaseInput class="col form-group"
+        <div class="form-row form-group">
+            <BaseInput class="col"
             v-model="character.firstName"
             label="First Name"
             type="text"
             />
-            <BaseInput class="col form-group"
+            <BaseInput class="col"
             v-model="character.name"
             label="Nickname"
             type="text"
             />
-            <BaseInput class="col form-group"
+            <BaseInput class="col"
             v-model="character.lastName"
             label="Last Name"
             type="text"
             />
             </div> 
     </div>
-    <div class="form-group bg-dark text-white">
+    <div class="form-control bg-dark text-white">
         <h3>Description</h3>
             <BaseInput
             v-model="character.description"
             type="text"
             />
     </div>
-    <div class="form-group bg-dark text-white">
+    <div class="form-control bg-dark text-white">
         <h3>Character Info</h3>
-            <BaseInput class="form-group"
+            <BaseInput
             v-model="character.level"
             label="level(number)"
             type="text"
             />
-            <BaseInput class="form-group"
+            <BaseInput
             v-model="character.speed"
             label="speed(number)"
             type="text"
             />
-            <BaseInput class="form-group"
+            <BaseInput
             v-model="character.age"
             label="age(number)"
             type="text"
             />
-            <BaseInput class="form-group"
+            <BaseInput
             v-model="character.characterClass"
             label="Class"
             type="text"
             />
-            <BaseInput class="form-group"
+            <BaseInput
             v-model="character.characterClass2"
             label="Sub-Class"
             type="text"
             />
-            <BaseInput class="form-group"
+            <BaseInput
             v-model="character.characterRace"
             label="Race"
             type="text"

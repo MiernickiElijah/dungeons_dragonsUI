@@ -2,6 +2,7 @@
 <form @submit.prevent="editPlayer()" class="form-group bg-dark text-white">
     <div class="form-control bg-dark text-white">
         <h3>Player Name</h3>
+        <div class="form-group">
             <BaseInput
             v-model="player.firstName"
             label="First Name"
@@ -12,6 +13,7 @@
             label="Last Name"
             type="text"
             />
+        </div>
     </div>
     <div class="form-control bg-dark text-white">
         <h3>Description</h3>
