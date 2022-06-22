@@ -11,7 +11,7 @@
           </div>
       </div>
     <div class="card-deck d-flex justify-content-center">
-        <PlayerCard v-for="player in players" :key="player.id" :player="player" />
+        <PlayerCard v-for="player in players" :key="player.id" :index="player.id" :player="player" />
     </div>
 </div>
 </template>

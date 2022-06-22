@@ -28,42 +28,36 @@
 <script>
 import PlayerService from '@/services/PlayerService'
 import BaseInput from '@/components/BaseInput.vue'
-import { getCurrentInstance } from 'vue'
 
 export default {
     components: {BaseInput},
      data() {
          return {
               player: {
-                  firstName: '',
-                  lastName: '',
-                  description: ''
-              },
+                id: 14, //need this to be dynamically passed down from V-for parent component
+                firstName: '',
+                lastName: '',
+                description: '',
+            }
          }       
      },
     methods: {
     editPlayer () {
-
-     var keyId = getCurrentInstance().vnode.key; 
-         console.log("PUT", keyId);
-
-         PlayerService.editPlayer().then(response => console.log(response))
-         .catch(error => {
-             console.log(error);
-
-         });
+         console.log("PUT", this.player.id);
+             PlayerService.editPlayer(this.player.id).then(response => {
+                 this.player = response.data
+                 }).catch(error => {
+                 console.log(error);
+             });
         },
         
     deletePlayer () {
-
-     var keyId = getCurrentInstance().vnode.key; 
-         console.log("DELETE", keyId);
-
-            PlayerService.deletePlayer().then(response => console.log(response))
-            .catch(error => {
-                console.log(error);
-
-            });
+         console.log("DELETE", this.player.id);
+             PlayerService.deletePlayer(this.player.id).then(response => {
+                 this.player = response.data
+                 }).catch(error => {
+                 console.log(error);
+             });
         }
     }
 }

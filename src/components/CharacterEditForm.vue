@@ -96,11 +96,7 @@ export default {
         },
     deleteCharacter () {
         console.log("DELETE")
-            //  CharacterService.deleteCharacter().then(response => {
-            //      this.character = response.data
-            //      }).catch(error => {
-            //      console.log(error);
-            //  });
+
         }
     }
 }

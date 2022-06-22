@@ -24,7 +24,7 @@ export default {
     },
 //edit player
     editPlayer(id: number){
-        return apiClient.put('/Player/' + id);
+        return apiClient.putForm('/Player/' + id);
     },
 //delete player
     deletePlayer(id: number){

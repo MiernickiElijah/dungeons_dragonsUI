@@ -6,9 +6,9 @@
           <p class="card-text">{{player.description}}</p>
       </div>
         <div class="card-footer">
-          <button @click="isShow = !isShow" class="btn btn-outline-success">Edit Player</button>
+          <button @click="isShow = !isShow" v-on:click="getId" class="btn btn-outline-success">Edit Player</button>
           <div v-if="isShow">
-            <PlayerEditForm :key="player.id"></PlayerEditForm>
+            <PlayerEditForm></PlayerEditForm>
             <button @click="isShow = !isShow" class="btn btn-outline-danger" type="button">Cancel</button>
           </div>
         </div>
@@ -22,11 +22,11 @@ import PlayerEditForm from '@/components/PlayerEditForm.vue';
 export default defineComponent({
     name: "PlayerCard",
     props: {
-        player: Object
+        player: Object,
     },
     data() {
         return {
-            isShow: false
+            isShow: false,
         };
     },
     components: { PlayerEditForm }
