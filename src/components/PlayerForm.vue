@@ -25,7 +25,6 @@
 </template>
 
 <script>
-import PlayerService from '@/services/PlayerService'
 import BaseInput from '@/components/BaseInput.vue'
 // import { v4 as uuidv4} from 'uuid'
 
@@ -42,15 +41,7 @@ export default {
     },
     methods: {
     sendForm () {
-        // this worked but would need to change db to accept string for id instead of int
-        // this.player.id = uuidv4();
-        PlayerService.postPlayer(this.player)
-        .then(() => {
-            console.log(this.player);
-            this.$store.commit('ADD_PLAYER', this.player)
-             }).catch(error => {
-                console.log(error);
-             });
+        this.$store.dispatch('postPlayer', this.player)
         },
     }
 }

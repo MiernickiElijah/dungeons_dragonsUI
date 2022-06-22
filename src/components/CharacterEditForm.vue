@@ -75,7 +75,7 @@ export default {
      data() {
          return {
               character: {
-                id : 7, //need to make this dynamic selecting 
+                id : 9, //need to make this dynamic selecting 
                 name : "",
                 firstName : "",
                 lastName : "",

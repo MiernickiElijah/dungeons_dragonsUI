@@ -34,7 +34,7 @@ export default {
      data() {
          return {
               player: {
-                id: 18, //need this to be dynamically passed down from V-for parent component
+                id: 19, //need this to be dynamically passed down from V-for parent component
                 firstName: '',
                 lastName: '',
                 description: '',
