@@ -67,7 +67,7 @@
 </template>
 
 <script>
-// import CharacterService from '@/services/CharacterService'
+import CharacterService from '@/services/CharacterService'
 import BaseInput from '@/components/BaseInput.vue'
 
 export default {
@@ -75,7 +75,7 @@ export default {
      data() {
          return {
               character: {
-                id : "",
+                id : 7, //need to make this dynamic selecting 
                 name : "",
                 firstName : "",
                 lastName : "",
@@ -90,16 +90,26 @@ export default {
         }       
     },
     methods: {
+        //headers only accepting GET and DELETE?
     editCharacter () {
-        console.log("PUT");
-
-        },
+         console.log("PUT", this.character.id);
+             CharacterService.editCharacter(this.character.id).then(response => {
+                 this.character = response.data
+                 }).catch(error => {
+                 console.log(error);
+             });
+        }, 
     deleteCharacter () {
-        console.log("DELETE")
-
+         console.log("DELETE", this.character.id);
+             CharacterService.deleteCharacter(this.character.id).then(response => {
+                 this.character = response.data
+                 }).catch(error => {
+                 console.log(error);
+            });
         }
     }
 }
+
 </script>
 
 <style>

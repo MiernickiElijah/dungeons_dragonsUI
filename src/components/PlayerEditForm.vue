@@ -34,7 +34,7 @@ export default {
      data() {
          return {
               player: {
-                id: 14, //need this to be dynamically passed down from V-for parent component
+                id: 18, //need this to be dynamically passed down from V-for parent component
                 firstName: '',
                 lastName: '',
                 description: '',
@@ -42,6 +42,7 @@ export default {
          }       
      },
     methods: {
+        //headers only accepting GET and DELETE?
     editPlayer () {
          console.log("PUT", this.player.id);
              PlayerService.editPlayer(this.player.id).then(response => {
@@ -49,8 +50,7 @@ export default {
                  }).catch(error => {
                  console.log(error);
              });
-        },
-        
+        }, 
     deletePlayer () {
          console.log("DELETE", this.player.id);
              PlayerService.deletePlayer(this.player.id).then(response => {
