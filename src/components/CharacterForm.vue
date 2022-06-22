@@ -91,9 +91,16 @@ export default {
     methods: {
         sendForm () {
             this.$store.dispatch('postCharacter', this.character)
+            .catch(error => {
+                this.$router.push({
+                    name: 'ErrorDisplay',
+                    params: {error: error}
+                })
+            })
         },
-    }
+    },
 }
+
 </script>
 
 <style>

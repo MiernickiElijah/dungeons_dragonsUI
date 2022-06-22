@@ -29,12 +29,12 @@ export default createStore({
   actions: {
   //PLAYERS//
     getPlayers({commit}) {
-      PlayerService.getPlayers()
+     return PlayerService.getPlayers()
         .then(response => {
           commit('SET_PLAYERS', response.data)
         })
         .catch(error => {
-        console.log(error)
+        throw(error)
         })
       },
     postPlayer({commit}, player){
@@ -44,17 +44,17 @@ export default createStore({
             commit('ADD_PLAYER', player)
           })
           .catch(error => {
-           console.log(error);
+           throw(error);
           });
       },
     //CHARACTERS//
     getCharacters({commit}) {
-      CharacterService.getCharacters()
+      return CharacterService.getCharacters()
         .then(response => {
           commit('SET_CHARACTERS', response.data)
           })
         .catch(error => {
-       console.log(error)
+       throw(error)
         })
      },
     postCharacter({commit}, character){
@@ -63,7 +63,7 @@ export default createStore({
                 console.log(character);
                 commit('ADD_CHARACTER', character)
                 }).catch(error => {
-                    console.log(error);
+                  throw(error);
                 });
   },
 },

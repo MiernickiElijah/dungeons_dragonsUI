@@ -23,6 +23,7 @@ name: "CharacterView",
       CharacterCard,
       CharacterForm
       },
+      props: ['id'],
   data() {
     return {
       isShow: false

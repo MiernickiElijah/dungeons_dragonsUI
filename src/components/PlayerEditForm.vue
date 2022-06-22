@@ -34,7 +34,7 @@ export default {
      data() {
          return {
               player: {
-                id: 19, //need this to be dynamically passed down from V-for parent component
+                id: 20, //need this to be dynamically passed down from V-for parent component
                 firstName: '',
                 lastName: '',
                 description: '',
@@ -42,25 +42,34 @@ export default {
          }       
      },
     methods: {
-        //headers only accepting GET and DELETE?
+        //headers only accepting GET and DELETE? //want page to render right after without refresh?
     editPlayer () {
          console.log("PUT", this.player.id);
              PlayerService.editPlayer(this.player.id).then(response => {
                  this.player = response.data
                  }).catch(error => {
-                 console.log(error);
-             });
-        }, 
+                        this.$router
+                    .push({
+                        name: 'ErrorDisplay',
+                        params: {error: error}
+                    })
+                })
+            },
+        },
     deletePlayer () {
          console.log("DELETE", this.player.id);
              PlayerService.deletePlayer(this.player.id).then(response => {
                  this.player = response.data
-                 }).catch(error => {
-                 console.log(error);
-             });
+                    }).catch(error => {
+                        this.$router
+                    .push({
+                        name: 'ErrorDisplay',
+                        params: {error: error}
+                })
+            })
         }
     }
-}
+
 </script>
 
 <style>

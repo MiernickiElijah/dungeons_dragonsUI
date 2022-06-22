@@ -42,6 +42,12 @@ export default {
     methods: {
     sendForm () {
         this.$store.dispatch('postPlayer', this.player)
+        .catch(error => {
+            this.$router.push({
+                name: 'ErrorDisplay',
+                params: {error: error}
+            })
+        })
         },
     }
 }
