@@ -90,13 +90,17 @@ export default {
         }        
     },
     methods: {
-    sendForm () {
-        CharacterService.postCharacter(this.character).then(response => {
-            this.character = response.data
-             }).catch(error => {
-                console.log(error);
-             });
-        }
+        sendForm () {
+            // this worked but would need to change db to accept string for id instead of int
+            // this.character.id = uuidv4();
+            CharacterService.postCharacter(this.character)
+            .then(() => {
+                console.log(this.character);
+                this.$store.commit('ADD_CHARACTER', this.character)
+                }).catch(error => {
+                    console.log(error);
+                });
+        },
     }
 }
 </script>

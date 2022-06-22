@@ -44,8 +44,10 @@ export default {
     sendForm () {
         // this worked but would need to change db to accept string for id instead of int
         // this.player.id = uuidv4();
-        PlayerService.postPlayer(this.player).then(response => {
-            this.player = response.data
+        PlayerService.postPlayer(this.player)
+        .then(() => {
+            console.log(this.player);
+            this.$store.commit('ADD_PLAYER', this.player)
              }).catch(error => {
                 console.log(error);
              });
