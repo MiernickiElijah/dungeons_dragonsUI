@@ -28,15 +28,15 @@
 </template>
 
 <script>
-import PlayerService from '@/services/PlayerService'
-import BaseInput from '@/components/BaseInput.vue'
+import PlayerService from '@/services/PlayerService';
+import BaseInput from '@/components/BaseInput.vue';
 
 export default {
     components: {BaseInput},
      data() {
          return {
               player: {
-                id: 21, //need this to be dynamically passed down from V-for parent component
+                id: 2, //need this to be dynamically passed down from V-for parent component
                 firstName: '',
                 lastName: '',
                 description: '',
@@ -47,7 +47,7 @@ export default {
         //headers only accepting GET and DELETE? //want page to render right after without refresh?
     editPlayer () {
          console.log("PUT", this.player.id);
-             PlayerService.editPlayer(this.player.id).then(response => {
+             PlayerService.editPlayer(this.player).then(response => {
                  this.player = response.data
                  }).catch(error => {
                         this.$router

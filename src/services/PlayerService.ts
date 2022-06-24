@@ -23,8 +23,8 @@ export default {
         return apiClient.post('/Player', player);
     },
 //edit player
-    editPlayer(id: number){
-        return apiClient.putForm('/Player/' + id);
+    editPlayer(player: Player){
+        return apiClient.put('/Player/' + player.id, player);
     },
 //delete player
     deletePlayer(id: number){
