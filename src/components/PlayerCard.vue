@@ -1,6 +1,6 @@
 <template>
   <div class="card text-white mb-3">
-    <img src="../assets/General_Kenobi.gif" class="card-img-top" alt="kenobi"/>
+    <img src="{{player.playerImage}}" class="card-img-top" alt="profile image"/>
       <div class="card-body">
           <h5 class="card-title">{{player.firstName}} {{player.lastName}}</h5>
           <p class="card-text">{{player.description}}</p>

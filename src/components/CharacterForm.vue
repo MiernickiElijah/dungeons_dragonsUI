@@ -61,6 +61,14 @@
             label="Race"
             type="text"
             />
+            <div class="form-control bg-dark text-white">
+            <h3>Character Image</h3>
+            <BaseInput
+            v-model="character.characterImage"
+            label="Image URL"
+            type="text"
+            />
+            </div>
         <button class="btn btn-outline-success" type="submit">Add</button>
     </div>
 
@@ -84,7 +92,8 @@ export default {
                 age: '',
                 characterClass: '', 
                 characterClass2: '',    
-                characterRace: '', 
+                characterRace: '',
+                characterImage: '',
             } 
         }        
     },

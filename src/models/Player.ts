@@ -4,4 +4,5 @@ export interface Player
     firstName: string,
     lastName: string, 
     description?: string
+    playerImage: string
 }

@@ -10,5 +10,6 @@ export interface Character
     age: number,
     characterClass: string, 
     characterClass2: string, 
-    characterRace: string, 
+    characterRace: string,
+    characterImage: string, 
 }

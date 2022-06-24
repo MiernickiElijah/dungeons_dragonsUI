@@ -14,9 +14,18 @@
             />
     </div>
     <div class="form-control bg-dark text-white">
+        <h3>Player Image</h3>
+            <BaseInput
+            v-model="player.playerImage"
+            label="URL for Image"
+            type="text"
+            />
+    </div>
+    <div class="form-control bg-dark text-white">
         <h3>Description</h3>
             <BaseInput
             v-model="player.description"
+            label="Description"
             type="text"
             />
         <button class="btn btn-outline-success" type="submit">Add</button>
@@ -26,7 +35,6 @@
 
 <script>
 import BaseInput from '@/components/BaseInput.vue'
-// import { v4 as uuidv4} from 'uuid'
 
 export default {
     components: {BaseInput},
@@ -35,7 +43,8 @@ export default {
             player: {
                 firstName: '',
                 lastName: '',
-                description: ''
+                description: '',
+                playerImage: ''
             },
         }       
     },

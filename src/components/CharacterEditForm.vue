@@ -54,6 +54,13 @@
             </div>
     </div>
     <div class="form-control bg-dark text-white">
+        <h3>Character Image</h3>
+            <BaseInput
+            v-model="character.characterImage"
+            type="text"
+            />
+    </div>
+    <div class="form-control bg-dark text-white">
         <h3>Description</h3>
             <BaseInput
             v-model="character.description"
@@ -85,6 +92,7 @@ export default {
                 characterClass : "",
                 characterClass2 : "",
                 characterRace: "",
+                characterImage: "",
             },
         }       
     },

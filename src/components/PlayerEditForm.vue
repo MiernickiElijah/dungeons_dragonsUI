@@ -40,6 +40,7 @@ export default {
                 firstName: '',
                 lastName: '',
                 description: '',
+                playerImage: '',
             }
          }       
      },
