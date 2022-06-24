@@ -36,7 +36,7 @@ export default {
      data() {
          return {
               player: {
-                id: 2, //need this to be dynamically passed down from V-for parent component
+                id: 24, //need this to be dynamically passed down from V-for parent component
                 firstName: '',
                 lastName: '',
                 description: '',
@@ -44,7 +44,7 @@ export default {
          }       
      },
     methods: {
-        //headers only accepting GET and DELETE? //want page to render right after without refresh?
+        //want page to render right after without refresh?
     editPlayer () {
          console.log("PUT", this.player.id);
              PlayerService.editPlayer(this.player).then(response => {

@@ -23,8 +23,8 @@ export default {
         return apiClient.post('/Character', character);
     },
     //edit character
-    editCharacter(id: number){
-        return apiClient.put('/Character/' + id);
+    editCharacter(character: Character){
+        return apiClient.put('/Character/' + character.id, character);
     },
     //delete character
     deleteCharacter(id:number){

@@ -74,7 +74,7 @@ export default {
      data() {
          return {
               character: {
-                id : 12, //need to make this dynamic selecting 
+                id : 13, //need to make this dynamic selecting 
                 name : "",
                 firstName : "",
                 lastName : "",
@@ -93,7 +93,7 @@ export default {
         //headers only accepting GET and DELETE? //want page to render right after without refresh?
     editCharacter () {
          console.log("PUT", this.character.id);
-             CharacterService.editCharacter(this.character.id).then(response => {
+             CharacterService.editCharacter(this.character).then(response => {
                  this.character = response.data
                  }).catch(error => {
                         this.$router
@@ -102,7 +102,7 @@ export default {
                         params: {error: error}
                     })
                 })
-        }, 
+            },
     deleteCharacter () {
          console.log("DELETE", this.character.id);
              CharacterService.deleteCharacter(this.character.id).then(response => {
