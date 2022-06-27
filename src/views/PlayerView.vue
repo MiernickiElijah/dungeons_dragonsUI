@@ -20,7 +20,7 @@
 import { defineComponent } from 'vue';
 import PlayerCard from '@/components/PlayerCard.vue';
 import PlayerForm from '@/components/PlayerForm.vue';
-import {Player} from '@/models/Player'; 
+// import {Player} from '@/models/Player'; 
 
 
 export default defineComponent({
@@ -29,9 +29,9 @@ export default defineComponent({
     PlayerCard,
     PlayerForm,
 },
-  props: {
-   player: Player
- },
+//   props: {
+//    player: Player
+//  },
   data() {
     return {
         isShow: false

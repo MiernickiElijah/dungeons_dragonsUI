@@ -15,6 +15,12 @@
             />
         </div>
     </div>
+        <div class="form-control bg-dark text-white">
+        <h3>Player Image</h3>
+        <input type="file"
+        @change="onFileSelect"
+        />
+    </div>
     <div class="form-control bg-dark text-white">
         <h3>Description</h3>
             <BaseInput
@@ -36,7 +42,7 @@ export default {
      data() {
          return {
               player: {
-                id: 24, //need this to be dynamically passed down from V-for parent component
+                id: 34, //need this to be dynamically passed down from V-for parent component
                 firstName: '',
                 lastName: '',
                 description: '',

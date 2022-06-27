@@ -9,6 +9,7 @@ const apiClient = axios.create ({
         'Content-Type': 'application/json'
     }
 });
+
 //get all players from json object in db
 export default {
     getPlayers() {

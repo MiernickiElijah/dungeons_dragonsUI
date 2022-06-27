@@ -53,13 +53,13 @@
             />
             </div>
     </div>
-    <div class="form-control bg-dark text-white">
+        <div class="form-control bg-dark text-white">
         <h3>Character Image</h3>
-            <BaseInput
-            v-model="character.characterImage"
-            type="text"
+            <input
+            v-on:change="character.characterImage"
+            type="file"
             />
-    </div>
+        </div>
     <div class="form-control bg-dark text-white">
         <h3>Description</h3>
             <BaseInput

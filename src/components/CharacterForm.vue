@@ -61,14 +61,13 @@
             label="Race"
             type="text"
             />
-            <div class="form-control bg-dark text-white">
-            <h3>Character Image</h3>
-            <BaseInput
-            v-model="character.characterImage"
-            label="Image URL"
-            type="text"
+        <div class="form-control bg-dark text-white">
+        <h3>Character Image</h3>
+            <input
+            v-on:change="character.characterImage"
+            type="file"
             />
-            </div>
+        </div>
         <button class="btn btn-outline-success" type="submit">Add</button>
     </div>
 

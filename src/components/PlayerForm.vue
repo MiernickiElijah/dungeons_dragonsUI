@@ -12,14 +12,15 @@
             label="Last Name"
             type="text"
             />
-    </div>
+        </div>
     <div class="form-control bg-dark text-white">
+        <div class="form-control bg-dark text-white">
         <h3>Player Image</h3>
-            <BaseInput
-            v-model="player.playerImage"
-            label="URL for Image"
-            type="text"
+            <input
+            v-on:change="player.playerImage"
+            type="file"
             />
+        </div>
     </div>
     <div class="form-control bg-dark text-white">
         <h3>Description</h3>
@@ -29,7 +30,7 @@
             type="text"
             />
         <button class="btn btn-outline-success" type="submit">Add</button>
-    </div>
+     </div>
     </form>
 </template>
 
@@ -49,7 +50,8 @@ export default {
         }       
     },
     methods: {
-    sendForm () {
+    sendForm (event) {
+        console.log(event)
         this.$store.dispatch('postPlayer', this.player)
         .catch(error => {
             this.$router.push({
