@@ -1,6 +1,6 @@
 <template>
       <div class="card text-white mb-3">
-        <img class="card-img-top" alt="profile image">
+        <img :src="character.characterImage" class="card-img-top" alt="profile image">
         <div class="card-body">
           <h5 class="card-title">{{character.firstName}} "{{character.name}}" {{character.lastName}}</h5>
           <p class="card-text">{{character.description}}</p>

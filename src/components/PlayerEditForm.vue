@@ -17,14 +17,17 @@
     </div>
         <div class="form-control bg-dark text-white">
         <h3>Player Image</h3>
-        <input type="file"
-        @change="onFileSelect"
-        />
+            <BaseInput
+            v-model="player.playerImage"
+            label="Player Image"
+            type="text"
+            />
     </div>
     <div class="form-control bg-dark text-white">
         <h3>Description</h3>
             <BaseInput
             v-model="player.description"
+            label="Description"
             type="text"
             />
         <button class="btn btn-outline-success" type="submit">Confirm</button>
@@ -42,7 +45,7 @@ export default {
      data() {
          return {
               player: {
-                id: 34, //need this to be dynamically passed down from V-for parent component
+                id: 49, //need this to be dynamically passed down from V-for parent component
                 firstName: '',
                 lastName: '',
                 description: '',
@@ -66,7 +69,7 @@ export default {
             },
     deletePlayer () {
          console.log("DELETE", this.player.id);
-             PlayerService.deletePlayer(this.player.id).then(response => {
+             PlayerService.deletePlayer(this.player).then(response => {
                  this.player = response.data
                     }).catch(error => {
                         this.$router

@@ -1,5 +1,5 @@
 <template>
-<form @submit.prevent="sendForm" class="form-group bg-dark text-white">
+<form @submit="sendForm" class="form-group bg-dark text-white">
     <div class="form-control bg-dark text-white">
         <h3>Player Name</h3>
             <BaseInput
@@ -14,13 +14,12 @@
             />
         </div>
     <div class="form-control bg-dark text-white">
-        <div class="form-control bg-dark text-white">
         <h3>Player Image</h3>
-            <input
-            v-on:change="player.playerImage"
-            type="file"
+            <BaseInput
+            v-model="player.playerImage"
+            label="player image"
+            type="text"
             />
-        </div>
     </div>
     <div class="form-control bg-dark text-white">
         <h3>Description</h3>
@@ -45,7 +44,7 @@ export default {
                 firstName: '',
                 lastName: '',
                 description: '',
-                playerImage: ''
+                //playerImage: '',
             },
         }       
     },

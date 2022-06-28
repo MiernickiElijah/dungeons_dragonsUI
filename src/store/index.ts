@@ -18,6 +18,9 @@ export default createStore({
     ADD_PLAYER(state, player) {
       state.players.push(player)
     },
+    // EDIT_PLAYER(state, player) {
+    //   state.players.push(player)
+    // },
     SET_CHARACTERS(state, characters) {
       state.characters = characters
     },
@@ -47,6 +50,16 @@ export default createStore({
            throw(error);
           });
       },
+      // editPlayer({commit}, player){
+      //   PlayerService.editPlayer(player)
+      //     .then(() => {
+      //         console.log(player);
+      //         commit('EDIT_PLAYER', player)
+      //       })
+      //       .catch(error => {
+      //        throw(error);
+      //       });
+      //   },
     //CHARACTERS//
     getCharacters({commit}) {
       return CharacterService.getCharacters()

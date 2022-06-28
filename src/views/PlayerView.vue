@@ -1,7 +1,9 @@
 <template>
 <div>
-  <h1>Ready Player Run</h1>
-    <h2>A helpful Dungeon Master tool to keep track of players and characters</h2>
+  <div>
+    <h1>Ready Player Run</h1>
+      <h2>A helpful Dungeon Master tool to keep track of players and characters</h2>
+  </div> 
       <div class="btnContainer mx-auto">
         <!--on button click show model which is PlayerForm component else hide form-->
         <button @click="isShow = !isShow" class="btn btn-outline-success">Add Player</button>
@@ -11,7 +13,7 @@
           </div>
       </div>
     <div class="card-deck d-flex justify-content-center">
-        <PlayerCard v-for="player in players" :key="player.id" :player="player" />
+      <PlayerCard v-for="player in players" :key="player.id" :player="player" />
     </div>
 </div>
 </template>
@@ -19,22 +21,21 @@
 <script>
 import { defineComponent } from 'vue';
 import PlayerCard from '@/components/PlayerCard.vue';
-import PlayerForm from '@/components/PlayerForm.vue';
-// import {Player} from '@/models/Player'; 
+import PlayerForm from '@/components/PlayerForm.vue'; 
 
 
 export default defineComponent({
-    name: "PlayerView",
-    components: {
+  name: "PlayerView",
+  components: {
     PlayerCard,
     PlayerForm,
-},
-//   props: {
-//    player: Player
-//  },
+  },
   data() {
     return {
-        isShow: false
+        isShow: false,
+        player: {
+          type: Object
+        }
       }
   },
   created() {
@@ -44,7 +45,8 @@ export default defineComponent({
     players() {
       return this.$store.state.players
     }
-  }
+  },
+  
 });
 </script>
 

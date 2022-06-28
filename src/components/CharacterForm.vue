@@ -23,13 +23,6 @@
             </div> 
     </div>
     <div class="form-control bg-dark text-white">
-        <h3>Description</h3>
-            <BaseInput
-            v-model="character.description"
-            type="text"
-            />
-    </div>
-    <div class="form-control bg-dark text-white">
         <h3>Character Info</h3>
             <BaseInput
             v-model="character.level"
@@ -61,16 +54,24 @@
             label="Race"
             type="text"
             />
-        <div class="form-control bg-dark text-white">
-        <h3>Character Image</h3>
-            <input
-            v-on:change="character.characterImage"
-            type="file"
-            />
         </div>
+    <div class="form-control bg-dark text-white">
+        <h3>Character Image</h3>
+            <BaseInput
+            v-model="character.characterImage"
+            label="Character image"
+            type="text"
+            />
+    </div>
+    <div class="form-control bg-dark text-white">
+        <h3>Description</h3>
+            <BaseInput
+            v-model="character.description"
+            label="Description"
+            type="text"
+            />
         <button class="btn btn-outline-success" type="submit">Add</button>
     </div>
-
     </form>
 </template>
 

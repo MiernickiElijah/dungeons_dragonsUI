@@ -55,15 +55,17 @@
     </div>
         <div class="form-control bg-dark text-white">
         <h3>Character Image</h3>
-            <input
-            v-on:change="character.characterImage"
-            type="file"
+            <BaseInput
+            v-model="character.characterImage"
+            label="Character Image"
+            type="text"
             />
-        </div>
+    </div>
     <div class="form-control bg-dark text-white">
         <h3>Description</h3>
             <BaseInput
             v-model="character.description"
+            label="Description"
             type="text"
             />
         <button class="btn btn-outline-success" type="submit">Confirm</button>
@@ -81,7 +83,7 @@ export default {
      data() {
          return {
               character: {
-                id : 13, //need to make this dynamic selecting 
+                id : 15, //need to make this dynamic selecting 
                 name : "",
                 firstName : "",
                 lastName : "",

@@ -9,7 +9,6 @@ const apiClient = axios.create ({
         'Content-Type': 'application/json'
     }
 });
-
 //get all players from json object in db
 export default {
     getPlayers() {
@@ -28,7 +27,7 @@ export default {
         return apiClient.put('/Player/' + player.id, player);
     },
 //delete player
-    deletePlayer(id: number){
-        return apiClient.delete('/Player/' + id);
+    deletePlayer(player: Player){
+        return apiClient.delete('/Player/' + player.id);
     }
 };
