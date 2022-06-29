@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { Character } from '@/models/Character';
 
-const apiClient = axios.create ({
+const apiClient = axios.create({
     baseURL: 'https://localhost:7225/api/',
     withCredentials: false,
     headers: {
@@ -15,7 +15,7 @@ export default {
         return apiClient.get('/Character')
     },
     //get 1 Character from json object by id
-    getCharacter(id: number) {
+    getCharacter(id: string) {
         return apiClient.get('/Character/' + id)
     },
     //post new character    
@@ -23,11 +23,11 @@ export default {
         return apiClient.post('/Character', character);
     },
     //edit character
-    editCharacter(character: Character){
+    editCharacter(character: Character) {
         return apiClient.put('/Character/' + character.id, character);
     },
     //delete character
-    deleteCharacter(id:number){
+    deleteCharacter(id: string) {
         return apiClient.delete('/Character/' + id);
     }
 };

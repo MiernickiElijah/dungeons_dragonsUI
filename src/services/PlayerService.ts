@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { Player } from '@/models/Player'
 
-const apiClient = axios.create ({
+const apiClient = axios.create({
     baseURL: 'https://localhost:7225/api/',
     withCredentials: false,
     headers: {
@@ -14,20 +14,20 @@ export default {
     getPlayers() {
         return apiClient.get('/Player');
     },
-//get 1 player from json object by id
-    getPlayer(id: number) {
+    //get 1 player from json object by id
+    getPlayer(id: string) {
         return apiClient.get('/Player/' + id);
     },
-//post new player
+    //post new player
     postPlayer(player: Player) {
         return apiClient.post('/Player', player);
     },
-//edit player
-    editPlayer(player: Player){
+    //edit player
+    editPlayer(player: Player) {
         return apiClient.put('/Player/' + player.id, player);
     },
-//delete player
-    deletePlayer(player: Player){
-        return apiClient.delete('/Player/' + player.id);
+    //delete player
+    deletePlayer(id: string) {
+        return apiClient.delete('/Player/' + id);
     }
 };

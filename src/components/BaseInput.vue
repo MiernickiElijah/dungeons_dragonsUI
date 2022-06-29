@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <input
         v-bind="$attrs"
         :placeholder="label"
@@ -17,9 +17,9 @@ export default {
             default: ''
         },
         modelValue: {
-            type: [String, Number], 
+            type: String,
             default: ''
         }
     }
 }
-</script>
+</script> -->
