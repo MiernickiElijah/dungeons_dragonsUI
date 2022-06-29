@@ -1,111 +1,73 @@
 <template>
-<div>
-</div>
-<form @submit.prevent="sendForm">
-    <div class="form-control bg-dark text-white">
-        <h3>Character Name</h3>
-        <div class="form-row form-group">
-            <BaseInput class="col"
-            v-model="character.firstName"
-            label="First Name"
-            type="text"
-            />
-            <BaseInput class="col"
-            v-model="character.name"
-            label="Nickname"
-            type="text"
-            />
-            <BaseInput class="col"
-            v-model="character.lastName"
-            label="Last Name"
-            type="text"
-            />
-            </div> 
+    <div>
     </div>
-    <div class="form-control bg-dark text-white">
-        <h3>Character Info</h3>
-            <BaseInput
-            v-model="character.level"
-            label="level(number)"
-            type="text"
-            />
-            <BaseInput
-            v-model="character.speed"
-            label="speed(number)"
-            type="text"
-            />
-            <BaseInput
-            v-model="character.age"
-            label="age(number)"
-            type="text"
-            />
-            <BaseInput
-            v-model="character.characterClass"
-            label="Class"
-            type="text"
-            />
-            <BaseInput
-            v-model="character.characterClass2"
-            label="Sub-Class"
-            type="text"
-            />
-            <BaseInput
-            v-model="character.characterRace"
-            label="Race"
-            type="text"
-            />
+    <form @submit.prevent="sendForm">
+        <div class="form-control bg-dark text-white">
+            <h3>Character Name</h3>
+            <div class="form-row form-group">
+                <input class="col form-group" v-model="character.firstName" placeholder="First Name" label="First Name"
+                    type="text" />
+                <input class="col form-group" v-model="character.name" label="Nickname" placeholder="Nickname"
+                    type="text" />
+                <input class="col form-group" v-model="character.lastName" label="Last Name" placeholder="Last Name"
+                    type="text" />
+            </div>
         </div>
-    <div class="form-control bg-dark text-white">
-        <h3>Character Image</h3>
-            <BaseInput
-            v-model="character.characterImage"
-            label="Character image"
-            type="text"
-            />
-    </div>
-    <div class="form-control bg-dark text-white">
-        <h3>Description</h3>
-            <BaseInput
-            v-model="character.description"
-            label="Description"
-            type="text"
-            />
-        <button class="btn btn-outline-success" type="submit">Add</button>
-    </div>
+        <div class="form-control bg-dark text-white">
+            <h3>Character Info</h3>
+            <input class="form-group" v-model="character.level" label="level(number)" placeholder="Level" type="text" />
+            <input class="form-group" v-model="character.speed" label="speed(number)" placeholder="Speed" type="text" />
+            <input class="form-group" v-model="character.age" label="age(number)" placeholder="Age" type="text" />
+            <input class="form-group" v-model="character.characterClass" label="Class" placeholder="Class"
+                type="text" />
+            <input class="form-group" v-model="character.characterClass2" label="Sub-Class"
+                placeholder="Sub-Class / Multi-Class" type="text" />
+            <input class="form-group" v-model="character.characterRace" label="Race" placeholder="Race" type="text" />
+        </div>
+        <div class="form-control bg-dark text-white">
+            <h3>Character Image</h3>
+            <input class="form-group" v-model="character.characterImage" placeholder="Image URL" label="Character image"
+                type="text" />
+        </div>
+        <div class="form-control bg-dark text-white">
+            <h3>Description</h3>
+            <input class="form-group" v-model="character.description" placeholder="Description" label="Description"
+                type="text" />
+            <br />
+            <button class="btn btn-outline-success" type="submit">Add</button>
+        </div>
     </form>
 </template>
 
 <script>
-import BaseInput from '@/components/BaseInput.vue'
 
 export default {
-    components: {BaseInput},
     data() {
         return {
             character: {
-                name: '', 
+                name: '',
                 firstName: '',
-                lastName: '', 
+                lastName: '',
                 description: '',
                 level: '',
-                speed: '', 
+                speed: '',
                 age: '',
-                characterClass: '', 
-                characterClass2: '',    
+                characterClass: '',
+                characterClass2: '',
                 characterRace: '',
                 characterImage: '',
-            } 
-        }        
+            }
+        }
     },
     methods: {
-        sendForm () {
+        sendForm() {
             this.$store.dispatch('postCharacter', this.character)
-            .catch(error => {
-                this.$router.push({
-                    name: 'ErrorDisplay',
-                    params: {error: error}
+                .catch(error => {
+                    this.$router.push({
+                        name: 'ErrorDisplay',
+                        params: { error: error }
+                    })
                 })
-            })
         },
     },
 }
@@ -113,7 +75,7 @@ export default {
 </script>
 
 <style>
-.btn{
+.btn {
     margin: 10px 10px 10px;
 }
 </style>

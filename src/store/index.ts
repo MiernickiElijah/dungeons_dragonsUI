@@ -18,9 +18,9 @@ export default createStore({
     ADD_PLAYER(state, player) {
       state.players.push(player)
     },
-    // EDIT_PLAYER(state, player) {
-    //   state.players.push(player)
-    // },
+    EDIT_PLAYER(state, player) {
+      state.players.push(player)
+    },
     SET_CHARACTERS(state, characters) {
       state.characters = characters
     },
@@ -30,56 +30,56 @@ export default createStore({
   },
   //recieves the command to utilize services api to commit the mutation//
   actions: {
-  //PLAYERS//
-    getPlayers({commit}) {
-     return PlayerService.getPlayers()
+    //PLAYERS//
+    getPlayers({ commit }) {
+      return PlayerService.getPlayers()
         .then(response => {
           commit('SET_PLAYERS', response.data)
         })
         .catch(error => {
-        throw(error)
+          throw (error)
         })
-      },
-    postPlayer({commit}, player){
+    },
+    postPlayer({ commit }, player) {
       PlayerService.postPlayer(player)
         .then(() => {
-            console.log(player);
-            commit('ADD_PLAYER', player)
-          })
-          .catch(error => {
-           throw(error);
-          });
-      },
-      // editPlayer({commit}, player){
-      //   PlayerService.editPlayer(player)
-      //     .then(() => {
-      //         console.log(player);
-      //         commit('EDIT_PLAYER', player)
-      //       })
-      //       .catch(error => {
-      //        throw(error);
-      //       });
-      //   },
+          console.log(player);
+          commit('ADD_PLAYER', player)
+        })
+        .catch(error => {
+          throw (error);
+        });
+    },
+    editPlayer({ commit }, player) {
+      PlayerService.editPlayer(player)
+        .then(() => {
+          console.log(player);
+          commit('EDIT_PLAYER', player)
+        })
+        .catch(error => {
+          throw (error);
+        });
+    },
     //CHARACTERS//
-    getCharacters({commit}) {
+    getCharacters({ commit }) {
       return CharacterService.getCharacters()
         .then(response => {
           commit('SET_CHARACTERS', response.data)
-          })
-        .catch(error => {
-       throw(error)
         })
-     },
-    postCharacter({commit}, character){
+        .catch(error => {
+          throw (error)
+        })
+    },
+    postCharacter({ commit }, character) {
       CharacterService.postCharacter(character)
-            .then(() => {
-                console.log(character);
-                commit('ADD_CHARACTER', character)
-                }).catch(error => {
-                  throw(error);
-                });
+        .then(() => {
+          console.log(character);
+          commit('ADD_CHARACTER', character)
+        }).catch(error => {
+          throw (error);
+        });
+    },
   },
-},
   modules: {
   }
 });

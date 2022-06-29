@@ -1,70 +1,55 @@
 <template>
-<form @submit="sendForm" class="form-group bg-dark text-white">
-    <div class="form-control bg-dark text-white">
-        <h3>Player Name</h3>
-            <BaseInput
-            v-model="player.firstName"
-            label="First Name"
-            type="text"
-            />
-            <BaseInput
-            v-model="player.lastName"
-            label="Last Name"
-            type="text"
-            />
+    <form @submit="sendForm" class="form-group bg-dark text-white">
+        <div class="form-control bg-dark text-white">
+            <h3>Player Name</h3>
+            <input v-model="player.firstName" placeholder="First Name" label="First Name" class="form-group"
+                type="text" />
+            <input v-model="player.lastName" placeholder="Last Name" label="Last Name" class="form-group" type="text" />
         </div>
-    <div class="form-control bg-dark text-white">
-        <h3>Player Image</h3>
-            <BaseInput
-            v-model="player.playerImage"
-            label="player image"
-            type="text"
-            />
-    </div>
-    <div class="form-control bg-dark text-white">
-        <h3>Description</h3>
-            <BaseInput
-            v-model="player.description"
-            label="Description"
-            type="text"
-            />
-        <button class="btn btn-outline-success" type="submit">Add</button>
-     </div>
+        <div class="form-control bg-dark text-white">
+            <h3>Player Image</h3>
+            <input v-model="player.playerImage" placeholder="Player Image URL" label="player image" class="form-group"
+                type="text" />
+        </div>
+        <div class="form-control bg-dark text-white">
+            <h3>Description</h3>
+            <input v-model="player.description" placeholder="Description" label="Description" class="form-group"
+                type="text" />
+            <br />
+            <button class="btn btn-outline-success" type="submit">Add</button>
+        </div>
     </form>
 </template>
 
 <script>
-import BaseInput from '@/components/BaseInput.vue'
-
 export default {
-    components: {BaseInput},
     data() {
         return {
             player: {
                 firstName: '',
                 lastName: '',
                 description: '',
-                //playerImage: '',
+                playerImage: '',
             },
-        }       
+        }
     },
     methods: {
-    sendForm (event) {
-        console.log(event)
-        this.$store.dispatch('postPlayer', this.player)
-        .catch(error => {
-            this.$router.push({
-                name: 'ErrorDisplay',
-                params: {error: error}
-            })
-        })
+        sendForm(event) {
+            console.log(event)
+            this.$store.dispatch('postPlayer', this.player)
+                .catch(error => {
+                    this.$router.push({
+                        name: 'ErrorDisplay',
+                        params: { error: error }
+                    })
+                })
         },
     }
 }
 </script>
 
 <style>
-.btn{
+.btn {
     margin: 10px 10px 10px;
 }
 </style>
