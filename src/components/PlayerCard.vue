@@ -7,28 +7,30 @@
     </div>
     <div class="card-footer">
       <button @click="isShow = !isShow" class="btn btn-outline-success">Edit Player</button>
-      <div v-if="isShow">
-        <form @submit.prevent="editPlayer()" class="form-group bg-dark text-white">
-          <div class="form-control bg-dark text-white">
-            <h3>Player Name</h3>
-            <div class="form-group">
-              <input v-model="playerModel.firstName" placeholder="First Name" class="form-control" type="input">
-              <input v-model="playerModel.lastName" placeholder="Last Name" class="form-control" type="input">
+      <transition name="card-slide-fade">
+        <div v-if="isShow">
+          <form @submit.prevent="editPlayer()" class="form-group bg-dark text-white">
+            <div class="form-control bg-dark text-white">
+              <h3>Player Name</h3>
+              <div class="form-group">
+                <input v-model="playerModel.firstName" placeholder="First Name" class="form-control" type="input">
+                <input v-model="playerModel.lastName" placeholder="Last Name" class="form-control" type="input">
+              </div>
             </div>
-          </div>
-          <div class="form-control bg-dark text-white">
-            <h3>Player Image</h3>
-            <input v-model="playerModel.playerImage" placeholder="Image URL" class="form-control" type="input">
-          </div>
-          <div class="form-control bg-dark text-white">
-            <h3>Description</h3>
-            <input v-model="playerModel.description" placeholder="Description" class="form-control" type="input">
-            <button class="btn btn-outline-success" type="submit">Confirm</button>
-          </div>
-        </form>
-        <button class="btn btn-outline-danger" v-on:click='deletePlayer()'>DELETE</button>
-        <button @click="isShow = !isShow" class="btn btn-outline-danger" type="button">Cancel</button>
-      </div>
+            <div class="form-control bg-dark text-white">
+              <h3>Player Image</h3>
+              <input v-model="playerModel.playerImage" placeholder="Image URL" class="form-control" type="input">
+            </div>
+            <div class="form-control bg-dark text-white">
+              <h3>Description</h3>
+              <input v-model="playerModel.description" placeholder="Description" class="form-control" type="input">
+              <button class="btn btn-outline-success" type="submit">Confirm</button>
+            </div>
+          </form>
+          <button class="btn btn-outline-danger" v-on:click='deletePlayer()'>DELETE</button>
+          <button @click="isShow = !isShow" class="btn btn-outline-danger" type="button">Cancel</button>
+        </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -93,5 +95,20 @@ a:focus,
 a:active {
   text-decoration: none;
   color: inherit;
+}
+
+.card-slide-fade-enter {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+.card-slide-fade-enter-active,
+.card-slide-fade-leave-active {
+  transition: all .5s ease;
+}
+
+.card-slide-fade-leave-to {
+  transform: translateY(10px);
+  opacity: 0;
 }
 </style>

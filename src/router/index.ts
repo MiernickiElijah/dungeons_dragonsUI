@@ -3,7 +3,6 @@ import PlayerView from '../views/PlayerView.vue'
 import CharacterView from '../views/CharacterView.vue'
 import ErrorDisplay from '../views/ErrorDisplay.vue'
 
-
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',

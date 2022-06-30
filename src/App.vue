@@ -1,9 +1,17 @@
 <template>
-  <nav>
-    <router-link to="/">PLAYERS</router-link> |
-    <router-link to="/Character">CHARACTERS</router-link>
-  </nav>
-  <router-view/>
+  <div id="app">
+    <nav>
+      <router-link to="/">PLAYERS</router-link> |
+      <router-link to="/Character">CHARACTERS</router-link>
+    </nav>
+    <router-view v-slot="{ Component, route }">
+      <transition name="slide-fade" mode="out-in">
+        <div :key="route.name">
+          <component :is="Component"></component>
+        </div>
+      </transition>
+    </router-view>
+  </div>
 </template>
 
 
@@ -15,6 +23,7 @@
   text-align: center;
   color: #FFB100;
   background-color: #0A0908;
+  scroll-behavior: smooth;
 }
 
 nav {
@@ -27,11 +36,32 @@ nav a {
 }
 
 nav a:hover {
+  transition: 1s;
   font-weight: bold;
-  color:  #72DDF7;
+  color: #72DDF7;
 }
 
 nav a.router-link-exact-active {
   color: #72DDF7;
+}
+
+/**transitions**/
+.slide-fade-enter {
+  transform: translateX(-10px);
+  opacity: 0;
+}
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all .5s ease;
+}
+
+.slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.card-img-top {
+  height: 18rem;
 }
 </style>

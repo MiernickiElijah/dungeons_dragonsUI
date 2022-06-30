@@ -7,40 +7,42 @@
     </div>
     <div class="card-footer">
       <button @click="isShow = !isShow" class="btn btn-outline-success">Edit Character</button>
-      <div v-if="isShow">
-        <form @submit.prevent="editCharacter()" class="form-group bg-dark text-white">
-          <div class="form-control bg-dark text-white">
-            <h3>Character Name</h3>
-            <div class="form-group">
-              <input v-model="characterModel.firstName" placeholder="First Name" class="form-control" type="input">
-              <input v-model="characterModel.name" placeholder="Nickname" class="form-control" type="input">
-              <input v-model="characterModel.lastName" placeholder="Last Name" class="form-control" type="input">
+      <transition name="card-slide-fade">
+        <div v-if="isShow">
+          <form @submit.prevent="editCharacter()" class="form-group bg-dark text-white">
+            <div class="form-control bg-dark text-white">
+              <h3>Character Name</h3>
+              <div class="form-group">
+                <input v-model="characterModel.firstName" placeholder="First Name" class="form-control" type="input">
+                <input v-model="characterModel.name" placeholder="Nickname" class="form-control" type="input">
+                <input v-model="characterModel.lastName" placeholder="Last Name" class="form-control" type="input">
+              </div>
+              <h3>Character Info</h3>
+              <div class="form-group">
+                <input v-model="characterModel.level" placeholder="Level" class="form-control" type="input">
+                <input v-model="characterModel.characterRace" placeholder="Race" class="form-control" type="input">
+                <input v-model="characterModel.characterClass" placeholder="Class" class="form-control" type="input">
+                <input v-model="characterModel.characterClass2" placeholder="Sub-Class / Multi-Class"
+                  class="form-control" type="input">
+                <input v-model="characterModel.age" placeholder="Age" class="form-control" type="input">
+                <input v-model="characterModel.speed" placeholder="Speed" class="form-control" type="input">
+              </div>
             </div>
-            <h3>Character Info</h3>
-            <div class="form-group">
-              <input v-model="characterModel.level" placeholder="Level" class="form-control" type="input">
-              <input v-model="characterModel.characterRace" placeholder="Race" class="form-control" type="input">
-              <input v-model="characterModel.characterClass" placeholder="Class" class="form-control" type="input">
-              <input v-model="characterModel.characterClass2" placeholder="Sub-Class / Multi-Class" class="form-control"
-                type="input">
-              <input v-model="characterModel.age" placeholder="Age" class="form-control" type="input">
-              <input v-model="characterModel.speed" placeholder="Speed" class="form-control" type="input">
+            <div class="form-control bg-dark text-white">
+              <h3>Character Image</h3>
+              <input v-model="characterModel.characterImage" placeholder="Character Image URL" class="form-control"
+                type="text" />
             </div>
-          </div>
-          <div class="form-control bg-dark text-white">
-            <h3>Character Image</h3>
-            <input v-model="characterModel.characterImage" placeholder="Character Image URL" class="form-control"
-              type="text" />
-          </div>
-          <div class="form-control bg-dark text-white">
-            <h3>Description</h3>
-            <input v-model="characterModel.description" placeholder="Description" class="form-control" type="text" />
-            <button class="btn btn-outline-success" type="submit">Confirm</button>
-          </div>
-        </form>
-        <button class="btn btn-outline-danger" v-on:click='deleteCharacter()'>DELETE</button>
-        <button @click="isShow = !isShow" class="btn btn-outline-danger" type="button">Cancel</button>
-      </div>
+            <div class="form-control bg-dark text-white">
+              <h3>Description</h3>
+              <input v-model="characterModel.description" placeholder="Description" class="form-control" type="text" />
+              <button class="btn btn-outline-success" type="submit">Confirm</button>
+            </div>
+          </form>
+          <button class="btn btn-outline-danger" v-on:click='deleteCharacter()'>DELETE</button>
+          <button @click="isShow = !isShow" class="btn btn-outline-danger" type="button">Cancel</button>
+        </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -105,5 +107,20 @@ a:focus,
 a:active {
   text-decoration: none;
   color: inherit;
+}
+
+.card-slide-fade-enter {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+.card-slide-fade-enter-active,
+.card-slide-fade-leave-active {
+  transition: all .5s ease;
+}
+
+.card-slide-fade-leave-to {
+  transform: translateY(10px);
+  opacity: 0;
 }
 </style>
