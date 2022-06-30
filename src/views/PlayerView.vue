@@ -15,8 +15,8 @@
       </transition>
     </div>
     <div class="card-deck d-flex justify-content-center">
-      <PlayerCard v-for="player in players" :id='player.id' :key="player.id" :player="player" @editPlayer="editPlayer"
-        @deletePlayer="deletePlayer" />
+      <PlayerCard v-for="player in players" :id='player.id' :key="player.id" :player="player"
+        @deletePlayer="deletePlayer" @editPlayer="editPlayer" />
     </div>
   </div>
 </template>
@@ -25,7 +25,7 @@
 import { defineComponent } from 'vue';
 import PlayerCard from '@/components/PlayerCard.vue';
 import PlayerForm from '@/components/PlayerForm.vue';
-import PlayerService from '@/services/PlayerService';
+// import PlayerService from '@/services/PlayerService';
 
 export default defineComponent({
   name: "PlayerView",
@@ -39,7 +39,7 @@ export default defineComponent({
     }
   },
   created() {
-    this.$store.dispatch('getPlayers')
+    this.$store.dispatch('getPlayers');
   },
   computed: {
     players() {
@@ -48,28 +48,22 @@ export default defineComponent({
   },
   methods: {
     editPlayer(player) {
-      PlayerService.editPlayer(player).then(response => {
-        //array update?
-        this.players.splice(0, this.players.length).concat(response.data)
-      }).catch(error => {
-        this.$router
-          .push({
+      this.$store.dispatch('editPlayer', player)
+        .catch(error => {
+          this.$router.push({
             name: 'ErrorDisplay',
             params: { error: error }
           });
-      });
+        });
     },
     deletePlayer(player) {
-      PlayerService.deletePlayer(player.id).then(response => {
-        //array update?
-        this.players.splice(0, this.players.length).concat(response.data)
-      }).catch(error => {
-        this.$router
-          .push({
+      this.$store.dispatch('deletePlayer', player.id)
+        .catch(error => {
+          this.$router.push({
             name: 'ErrorDisplay',
             params: { error: error }
           });
-      });
+        });
     }
   }
 });

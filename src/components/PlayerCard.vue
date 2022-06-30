@@ -47,7 +47,7 @@ export default defineComponent({
     return {
       isShow: false,
       playerModel: this.player
-    };
+    }
   },
   methods: {
     editPlayer() {

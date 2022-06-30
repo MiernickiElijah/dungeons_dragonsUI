@@ -21,7 +21,6 @@
 import { defineComponent } from "vue"
 import CharacterCard from '@/components/CharacterCard.vue'
 import CharacterForm from '../components/CharacterForm'
-import CharacterService from "@/services/CharacterService";
 
 export default defineComponent({
   name: "CharacterView",
@@ -35,7 +34,7 @@ export default defineComponent({
     }
   },
   created() {
-    this.$store.dispatch('getCharacters')
+    this.$store.dispatch('getCharacters');
   },
   computed: {
     characters() {
@@ -44,28 +43,22 @@ export default defineComponent({
   },
   methods: {
     editCharacter(character) {
-      CharacterService.editCharacter(character).then(response => {
-        //array update?
-        this.characters.splice(0, this.characters.length).concat(response.data)
-      }).catch(error => {
-        this.$router
-          .push({
+      this.$store.dispatch('editCharacter', character)
+        .catch(error => {
+          this.$router.push({
             name: 'ErrorDisplay',
             params: { error: error }
           });
-      });
+        });
     },
     deleteCharacter(character) {
-      CharacterService.deleteCharacter(character.id).then(response => {
-        //array update?
-        this.characters.splice(0, this.characters.length).concat(response.data)
-      }).catch(error => {
-        this.$router
-          .push({
+      this.$store.dispatch('deleteCharacter', character.id)
+        .catch(error => {
+          this.$router.push({
             name: 'ErrorDisplay',
             params: { error: error }
           });
-      });
+        });
     }
   }
 });

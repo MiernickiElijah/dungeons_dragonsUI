@@ -27,7 +27,7 @@ export default {
         return apiClient.put('/Player/' + player.id, player);
     },
     //delete player
-    deletePlayer(id: string) {
+    deletePlayer(id: number) {
         return apiClient.delete('/Player/' + id);
     }
-};
+}

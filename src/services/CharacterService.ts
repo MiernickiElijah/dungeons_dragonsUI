@@ -8,7 +8,7 @@ const apiClient = axios.create({
         Accept: 'application/json',
         'Content-Type': 'application/json'
     }
-})
+});
 //get all Characters from json object in db
 export default {
     getCharacters() {
@@ -27,7 +27,7 @@ export default {
         return apiClient.put('/Character/' + character.id, character);
     },
     //delete character
-    deleteCharacter(id: string) {
+    deleteCharacter(id: number) {
         return apiClient.delete('/Character/' + id);
     }
-};
+}

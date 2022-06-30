@@ -66,8 +66,8 @@ export default {
                     this.$router.push({
                         name: 'ErrorDisplay',
                         params: { error: error }
-                    })
-                })
+                    });
+                });
         },
     },
 }

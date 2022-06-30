@@ -2,8 +2,19 @@
   <div class="card text-white mb-3">
     <img :src="character.characterImage" class="card-img-top" alt="profile image" />
     <div class="card-body">
-      <h5 class="card-title">{{ character.firstName }} {{ character.lastName }}</h5>
+      <h5 class="card-title">{{ character.firstName }} "{{ character.name }}" {{ character.lastName }}</h5>
       <p class="card-text">{{ character.description }}</p>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"> Level: {{ character.level }}</li>
+        <li class="list-group-item"> Race: {{ character.characterRace }} Class: {{ character.characterClass }}</li>
+        <li class="list-group-item"> Class: {{ character.characterClass }}</li>
+        <li class="list-group-item"> Sub-Class / Multi-Class: {{ character.characterClass2 }}</li>
+      </ul>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"> Age: {{ character.age }}</li>
+        <li class="list-group-item"> Speed: {{ character.speed }}</li>
+      </ul>
+
     </div>
     <div class="card-footer">
       <button @click="isShow = !isShow" class="btn btn-outline-success">Edit Character</button>
@@ -59,7 +70,7 @@ export default defineComponent({
     return {
       isShow: false,
       characterModel: this.character
-    };
+    }
   },
   methods: {
     editCharacter() {
@@ -99,6 +110,14 @@ ul {
 
 li {
   display: inline-block;
+}
+
+.list-group {
+  background-color: #0C4767;
+}
+
+.list-group-item {
+  background-color: #0C4767;
 }
 
 a,
