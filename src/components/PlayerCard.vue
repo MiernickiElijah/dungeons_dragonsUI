@@ -24,10 +24,11 @@
             <div class="form-control bg-dark text-white">
               <h3>Description</h3>
               <input v-model="playerModel.description" placeholder="Description" class="form-control" type="input">
-              <button class="btn btn-outline-success" type="submit">Confirm</button>
+              <button @click="isShow = !isShow" class="btn btn-outline-success" type="submit">Confirm</button>
             </div>
           </form>
-          <button class="btn btn-outline-danger" v-on:click='deletePlayer()'>DELETE</button>
+          <button @click="isShow = !isShow" class="btn btn-outline-danger" type="button"
+            v-on:click='deletePlayer()'>DELETE</button>
           <button @click="isShow = !isShow" class="btn btn-outline-danger" type="button">Cancel</button>
         </div>
       </transition>

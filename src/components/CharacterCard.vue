@@ -47,10 +47,11 @@
             <div class="form-control bg-dark text-white">
               <h3>Description</h3>
               <input v-model="characterModel.description" placeholder="Description" class="form-control" type="text" />
-              <button class="btn btn-outline-success" type="submit">Confirm</button>
+              <button @click="isShow = !isShow" class="btn btn-outline-success" type="submit">Confirm</button>
             </div>
           </form>
-          <button class="btn btn-outline-danger" v-on:click='deleteCharacter()'>DELETE</button>
+          <button @click="isShow = !isShow" class="btn btn-outline-danger"
+            v-on:click='deleteCharacter()'>DELETE</button>
           <button @click="isShow = !isShow" class="btn btn-outline-danger" type="button">Cancel</button>
         </div>
       </transition>
