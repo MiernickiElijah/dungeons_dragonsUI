@@ -1,15 +1,14 @@
-export interface Character
-{
+export interface Character {
     id: string,
-    name?: string, 
+    name?: string,
     firstName: string,
-    lastName: string, 
+    lastName: string,
     description?: string,
     level: number,
-    speed: number, 
+    speed: number,
     age: number,
-    characterClass: string, 
-    characterClass2: string, 
+    characterClass: string,
+    characterClass2: string,
     characterRace: string,
-    characterImage: string, 
+    characterImage: string,
 }

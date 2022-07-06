@@ -1,8 +1,7 @@
-export interface Player
-{
+export interface Player {
     id: string,
     firstName: string,
-    lastName: string, 
+    lastName: string,
     description?: string
     playerImage: string
 }

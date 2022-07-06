@@ -52,7 +52,7 @@ export default defineComponent({
         });
     },
     deleteCharacter(character) {
-      this.$store.dispatch('deleteCharacter', character.id)
+      this.$store.dispatch('deleteCharacter', character)
         .catch(error => {
           this.$router.push({
             name: 'ErrorDisplay',

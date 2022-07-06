@@ -27,7 +27,7 @@ export default {
         return apiClient.put('/Character/' + character.id, character);
     },
     //delete character
-    deleteCharacter(id: number) {
-        return apiClient.delete('/Character/' + id);
+    deleteCharacter(character: Character) {
+        return apiClient.delete('/Character/' + character.id);
     }
 }

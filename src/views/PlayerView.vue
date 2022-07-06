@@ -9,7 +9,7 @@
       <button @click="isShow = !isShow" class="btn btn-outline-success">Add Player</button>
       <transition name="slide-fade">
         <div v-if="isShow">
-          <PlayerForm></PlayerForm>
+          <PlayerForm @submit="isShow = !isShow"></PlayerForm>
           <button @click="isShow = !isShow" class="btn btn-outline-danger" type="button">Cancel</button>
         </div>
       </transition>
@@ -57,7 +57,7 @@ export default defineComponent({
         });
     },
     deletePlayer(player) {
-      this.$store.dispatch('deletePlayer', player.id)
+      this.$store.dispatch('deletePlayer', player)
         .catch(error => {
           this.$router.push({
             name: 'ErrorDisplay',

@@ -34,8 +34,7 @@ export default {
         }
     },
     methods: {
-        sendForm(event) {
-            console.log(event)
+        sendForm() {
             this.$store.dispatch('postPlayer', this.player)
                 .catch(error => {
                     this.$router.push({

@@ -15,7 +15,6 @@ export default createStore({
   },
   //changes the state of the components by adding player to arrays//
   mutations: {
-
     //players//
     SET_PLAYERS(state, players) {
       state.players = players
@@ -23,12 +22,18 @@ export default createStore({
     ADD_PLAYER(state, player) {
       state.players.push(player)
     },
-    // EDIT_PLAYER(state, player) {
-    //   state.players.push(player)
-    // },
-    // DELETE_PLAYER(state, player) {
-    //   state.players.push(player)
-    // },
+    EDIT_PLAYER(state, player) {
+      const index = state.players.indexOf(player);
+      if (index !== -1) {
+        return state.players;
+      }
+    },
+    DELETE_PLAYER(state, player) {
+      const index = state.players.indexOf(player);
+      if (index !== -1) {
+        state.players.splice(index, 1);
+      }
+    },
 
     //characters//
     SET_CHARACTERS(state, characters) {
@@ -37,12 +42,18 @@ export default createStore({
     ADD_CHARACTER(state, character) {
       state.characters.push(character)
     },
-    // EDIT_CHARACTER(state, character) {
-    //   state.characters.push(character)
-    // },
-    // DELETE_CHARACTER(state, character) {
-    //   state.characters.push(character)
-    // },
+    EDIT_CHARACTER(state, character) {
+      const index = state.characters.indexOf(character);
+      if (index !== -1) {
+        return state.characters;
+      }
+    },
+    DELETE_CHARACTER(state, character) {
+      const index = state.characters.indexOf(character);
+      if (index !== -1) {
+        state.characters.splice(index, 1);
+      }
+    },
   },
 
   //recieves the command to utilize services api to commit the mutation//
@@ -97,7 +108,6 @@ export default createStore({
     postCharacter({ commit }, character) {
       CharacterService.postCharacter(character)
         .then(() => {
-          console.log(character);
           commit('ADD_CHARACTER', character);
         }).catch(error => {
           throw (error);
