@@ -1,5 +1,5 @@
 <template>
-    <form @submit="sendForm" class="form-group bg-dark text-white">
+    <form @submit.prevent="sendForm" class="form-group bg-dark text-white">
         <div class="form-control bg-dark text-white">
             <h3>Player Name</h3>
             <input v-model="player.firstName" placeholder="First Name" label="First Name" class="form-group"

@@ -5,7 +5,7 @@
       <button @click="isShow = !isShow" class="btn btn-outline-success">Add Character</button>
       <transition name="slide-fade">
         <div v-if="isShow">
-          <CharacterForm></CharacterForm>
+          <CharacterForm @submit="isShow = !isShow"></CharacterForm>
           <button @click="isShow = !isShow" class="btn btn-outline-danger" type="button">Cancel</button>
         </div>
       </transition>

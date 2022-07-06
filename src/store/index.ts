@@ -34,13 +34,12 @@ export default createStore({
         state.players.splice(index, 1);
       }
     },
-
     //characters//
     SET_CHARACTERS(state, characters) {
       state.characters = characters
     },
     ADD_CHARACTER(state, character) {
-      state.characters.push(character)
+      state.characters.push(character);
     },
     EDIT_CHARACTER(state, character) {
       const index = state.characters.indexOf(character);
@@ -131,8 +130,6 @@ export default createStore({
           throw (error);
         });
     },
-  },
-  modules: {
   }
 });
 

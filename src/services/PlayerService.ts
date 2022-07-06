@@ -28,6 +28,7 @@ export default {
     },
     //delete player
     deletePlayer(player: Player) {
+        const c = confirm("Do you really want to delete it?")
         return apiClient.delete('/Player/' + player.id);
     }
 }

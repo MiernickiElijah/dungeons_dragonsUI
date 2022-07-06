@@ -28,6 +28,7 @@ export default {
     },
     //delete character
     deleteCharacter(character: Character) {
+        const c = confirm("Do you really want to delete it?");
         return apiClient.delete('/Character/' + character.id);
     }
 }
