@@ -1,5 +1,6 @@
-import axios from 'axios'
-import { Player } from '@/models/Player'
+import axios from 'axios';
+import { Player } from '@/models/Player';
+import nProgress from 'nprogress';
 
 const apiClient = axios.create({
     baseURL: 'https://localhost:7225/api/',
@@ -9,6 +10,18 @@ const apiClient = axios.create({
         'Content-Type': 'application/json'
     }
 });
+
+//loading bar for api//
+apiClient.interceptors.request.use(config => {
+    nProgress.start()
+    return config
+});
+
+apiClient.interceptors.response.use(response => {
+    nProgress.done()
+    return response
+});
+
 //get all players from json object in db
 export default {
     getPlayers() {
