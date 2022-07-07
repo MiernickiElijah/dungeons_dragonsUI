@@ -1,8 +1,10 @@
 <template>
   <div>
-    <div>
-      <h1>Ready Player Run</h1>
-      <h2>A helpful Dungeon Master tool to keep track of players and characters</h2>
+    <div class="jumbotron jumbotron-fluid bg-transparent">
+      <div class="container">
+        <h1 class="display-4">Dungeon Master's Log</h1>
+        <p class="lead">This is a helpful Dungeon Master tool to keep track of players and characters</p>
+      </div>
     </div>
     <div class="btnContainer mx-auto">
       <!--on button click show model which is PlayerForm component else hide form-->
