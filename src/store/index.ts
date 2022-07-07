@@ -1,15 +1,16 @@
-import PlayerService from '@/services/PlayerService'
+import PlayerService from '@/services/PlayerService';
 import CharacterService from '@/services/CharacterService';
-import { createStore } from 'vuex'
-
+import { createStore } from 'vuex';
+import { Player } from '@/models/Player';
+import { Character } from '@/models/Character';
 
 // VADER https://c.tenor.com/R4ga77Y61ssAAAAC/yes.gif //
 
 export default createStore({
   state: {
     user: 'Eli Miernicki',
-    players: [] as string[],
-    characters: [] as string[]
+    players: [] as Player[],
+    characters: [] as Character[]
   },
   getters: {
   },
@@ -19,17 +20,17 @@ export default createStore({
     SET_PLAYERS(state, players) {
       state.players = players
     },
-    ADD_PLAYER(state, player) {
+    ADD_PLAYER(state, player: Player) {
       state.players.push(player)
     },
-    EDIT_PLAYER(state, player) {
-      const index = state.players.indexOf(player);
+    EDIT_PLAYER(state, editedPlayer: Player) {
+      const index = state.players.findIndex(player => player.id === editedPlayer.id);
       if (index !== -1) {
-        return state.players;
+        state.players.splice(index, 1, editedPlayer)
       }
     },
-    DELETE_PLAYER(state, player) {
-      const index = state.players.indexOf(player);
+    DELETE_PLAYER(state, deletedPlayer: Player) {
+      const index = state.players.findIndex(player => player.id === deletedPlayer.id);
       if (index !== -1) {
         state.players.splice(index, 1);
       }
@@ -38,17 +39,17 @@ export default createStore({
     SET_CHARACTERS(state, characters) {
       state.characters = characters
     },
-    ADD_CHARACTER(state, character) {
+    ADD_CHARACTER(state, character: Character) {
       state.characters.push(character);
     },
-    EDIT_CHARACTER(state, character) {
-      const index = state.characters.indexOf(character);
+    EDIT_CHARACTER(state, editedCharacter: Character) {
+      const index = state.characters.findIndex(character => character.id === editedCharacter.id);
       if (index !== -1) {
         return state.characters;
       }
     },
-    DELETE_CHARACTER(state, character) {
-      const index = state.characters.indexOf(character);
+    DELETE_CHARACTER(state, deletedCharacter: Character) {
+      const index = state.characters.findIndex(character => character.id === deletedCharacter.id);
       if (index !== -1) {
         state.characters.splice(index, 1);
       }
@@ -69,8 +70,8 @@ export default createStore({
     },
     postPlayer({ commit }, player) {
       PlayerService.postPlayer(player)
-        .then(() => {
-          commit('ADD_PLAYER', player);
+        .then((response) => {
+          commit('SET_PLAYERS', response.data);
         })
         .catch(error => {
           throw (error);

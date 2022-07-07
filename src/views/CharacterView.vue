@@ -12,7 +12,7 @@
     </div>
     <div class='card-deck d-flex justify-content-center'>
       <CharacterCard v-for="character in characters" :key="character.id" :character="character"
-        @editCharacter="editCharacter" @deleteCharacter="deleteCharacter" />
+        @deleteCharacter="deleteCharacter" @editCharacter="editCharacter" />
     </div>
   </div>
 </template>
@@ -20,7 +20,7 @@
 <script>
 import { defineComponent } from "vue"
 import CharacterCard from '@/components/CharacterCard.vue'
-import CharacterForm from '../components/CharacterForm'
+import CharacterForm from '@/components/CharacterForm.vue'
 
 export default defineComponent({
   name: "CharacterView",

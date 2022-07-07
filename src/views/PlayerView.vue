@@ -27,7 +27,6 @@
 import { defineComponent } from 'vue';
 import PlayerCard from '@/components/PlayerCard.vue';
 import PlayerForm from '@/components/PlayerForm.vue';
-// import PlayerService from '@/services/PlayerService';
 
 export default defineComponent({
   name: "PlayerView",
