@@ -19,6 +19,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'ErrorDisplay',
     component: ErrorDisplay,
     props: true
+  },
+  {
+    path: '/404',
+    name: '404',
+    component: ErrorDisplay
   }
 ]
 

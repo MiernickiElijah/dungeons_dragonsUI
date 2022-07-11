@@ -22,7 +22,6 @@ apiClient.interceptors.response.use(response => {
     return response
 });
 
-
 //get all Characters from json object in db
 export default {
     getCharacters() {
