@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent="sendForm" class="form-group bg-dark text-white">
+    <form enctype="multipart/form-data" @submit.prevent="sendForm" class="form-group bg-dark text-white">
         <div class="form-control bg-dark text-white">
             <h3>Player Name</h3>
             <input v-model="player.firstName" placeholder="First Name" label="First Name" class="form-group"
@@ -8,8 +8,8 @@
         </div>
         <div class="form-control bg-dark text-white">
             <h3>Player Image</h3>
-            <input v-model="player.playerImage" placeholder="Player Image URL" label="player image" class="form-group"
-                type="text" />
+            <input @change="handleImage($event)" accept="image/gif, image/jpg, image/jpeg, image/png" placeholder="Player Image" label="player image" class="form-group"
+                type="file" />
         </div>
         <div class="form-control bg-dark text-white">
             <h3>Description</h3>
@@ -20,8 +20,8 @@
         </div>
     </form>
 </template>
-
 <script>
+
 export default {
     data() {
         return {
@@ -29,11 +29,14 @@ export default {
                 firstName: '',
                 lastName: '',
                 description: '',
-                playerImage: '',
+                playerImage: ''
             },
         }
     },
     methods: {
+        handleImage(e) {
+            this.player.playerImage = e.target.files[0];
+        },
         sendForm() {
             this.$store.dispatch('postPlayer', this.player)
                 .catch(error => {
@@ -52,3 +55,4 @@ export default {
     margin: 10px 10px 10px;
 }
 </style>
+

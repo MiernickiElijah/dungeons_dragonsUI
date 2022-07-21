@@ -10,5 +10,5 @@ export interface Character {
     characterClass: string,
     characterClass2: string,
     characterRace: string,
-    characterImage: string,
+    characterImage: File,
 }

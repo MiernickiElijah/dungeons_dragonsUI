@@ -9,7 +9,7 @@
       <button @click="isShow = !isShow" class="btn btn-outline-success">Edit Player</button>
       <transition name="card-slide-fade">
         <div v-if="isShow">
-          <form @submit.prevent="editPlayer()" class="form-group bg-dark text-white">
+          <form enctype="multipart/form-data" @submit.prevent="editPlayer()" class="form-group bg-dark text-white">
             <div class="form-control bg-dark text-white">
               <h3>Player Name</h3>
               <div class="form-group">
@@ -19,7 +19,7 @@
             </div>
             <div class="form-control bg-dark text-white">
               <h3>Player Image</h3>
-              <input v-model="playerModel.playerImage" placeholder="Image URL" class="form-control" type="input">
+              <input v-on:change="playerModel.playerImage" accept="image/gif, image/jpg, image/jpeg, image/png" placeholder="Player Image" type="file" name="playerImage">
             </div>
             <div class="form-control bg-dark text-white">
               <h3>Description</h3>

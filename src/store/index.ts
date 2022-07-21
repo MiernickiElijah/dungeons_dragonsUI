@@ -68,7 +68,7 @@ export default createStore({
           throw (error);
         });
     },
-    postPlayer({ commit }, player) {
+    postPlayer({ commit }: any, player: Player) {
       PlayerService.postPlayer(player)
         .then((response) => {
           commit('SET_PLAYERS', response.data);

@@ -33,7 +33,17 @@ export default {
     },
     //post new player
     postPlayer(player: Player) {
-        return apiClient.post('/Player', player);
+        const formData = new FormData();
+        formData.append('firstName', player.firstName);
+        formData.append('lastName', player.lastName);
+        formData.append('description', player.description);
+        formData.append('image', player.playerImage);
+        return apiClient.post('/Player', formData,
+        {
+            headers: {
+                    'Content-Type': 'multipart/form-data'
+            }
+        });
     },
     //edit player
     editPlayer(player: Player) {
